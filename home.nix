@@ -1,0 +1,1 @@
+/home/antisune/.config/home-manager/home.nix
