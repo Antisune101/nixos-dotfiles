@@ -3,7 +3,6 @@
 let 
   home = builtins.getEnv "HOME";
   dotfileDir = "${home}/.config/dotfiles";
-  install-script = (import "${dotfileDir}/modules/installscript.nix" {inherit pkgs; });
   myEditor = "hx --config ~/.config/helix/config.toml";
   myShellAliases = {
     hypr = "${myEditor} ~/.config/hypr/hyprland.conf";
@@ -40,7 +39,6 @@ in {
   nixpkgs.config.allowUnfree = true;
   
   home.packages = with pkgs; [
-    install-script
     # Apps I use regularly
     brave
     discord
