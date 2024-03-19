@@ -28,6 +28,16 @@ else
   echo "Error: home.nix not found in dotfiles"
 fi
 
+echo "Installing Wallpapers..."
+if [ -d ~/.config/dofiles/modules/wallpapers ]; then
+  if [ ! -d ~/Pictures ]; then
+    mkdir ~/Pictures
+  fi
+  ln -s ~/.config/dofiles/modules/wallpapers ~/Pictures/Wallpapers
+else
+  echo "Wallpaper folder not found in ./modules..."
+fi
+
 echo "Rebuild system..."
 sudo nixos-rebuild switch
 home-manager switch
