@@ -17,6 +17,7 @@ let
 in {
 
   imports = [
+    "${dotfileDir}/modules/hyprland.nix"
     "${dotfileDir}/modules/waybar.nix"
     "${dotfileDir}/modules/lf.nix"
   ];
