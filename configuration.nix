@@ -76,6 +76,7 @@
     helix
     nil
     gparted
+    unzip
 
     #Hyprland Apps
     kitty
