@@ -54,6 +54,7 @@ in {
     # Extra apps that are cool
     neofetch
     htop
+    btop
     cava
 
     # LSP
