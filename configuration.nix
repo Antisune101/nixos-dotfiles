@@ -77,6 +77,7 @@
     nil
     gparted
     unzip
+    zip
 
     #Hyprland Apps
     kitty

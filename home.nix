@@ -49,6 +49,9 @@ in {
     mpv
     font-awesome
     nsxiv
+    gnome.file-roller
+    p7zip
+    gnome.nautilus
     
     
     # Extra apps that are cool
@@ -60,6 +63,8 @@ in {
     # LSP
     marksman
     nodePackages.bash-language-server
+    jdk
+    android-tools
     
   ];
 
