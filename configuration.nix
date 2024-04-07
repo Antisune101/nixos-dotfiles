@@ -21,6 +21,13 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+
+  services.blueman.enable = true;
+
   # Set your time zone.
   time.timeZone = "Africa/Johannesburg";
 
