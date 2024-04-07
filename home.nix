@@ -5,7 +5,7 @@ let
   dotfileDir = "${home}/.config/dotfiles";
   myEditor = "hx --config ~/.config/helix/config.toml";
   myShellAliases = {
-    hypr = "${myEditor} ~/.config/hypr/hyprland.conf";
+    hypr = "${myEditor} ~/.config/dotfiles/modules/hyprland.nix";
 
     dots = "cd ~/.config/dotfiles";
     home = "${myEditor} ~/.config/dotfiles/home.nix";
@@ -43,6 +43,8 @@ in {
     brave
     discord
     godot_4
+    gimp
+    lunar-client
 
     # Utilities
     xfce.thunar
@@ -52,7 +54,11 @@ in {
     gnome.file-roller
     p7zip
     gnome.nautilus
-    
+    grim
+    slurp
+    swappy
+    wl-clipboard
+    dolphin
     
     # Extra apps that are cool
     neofetch

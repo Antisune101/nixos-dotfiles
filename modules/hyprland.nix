@@ -12,7 +12,8 @@
       $terminal = kitty
       $menu = rofi -show drun
       $filemanager = kitty lf
-
+      $screenshot = grim -g "$(slurp)" - | wl-copy && wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png | dunstify "Screenshot saved" -t 1000
+      $screenshotEdit = grim -g "$(slurp)" - | wl-copy && wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png | swappy -f - | dunstify "Screenshot saved" -t 1000
 
       monitor=,preferred,auto,auto
 
@@ -32,7 +33,7 @@
           kb_options =
           kb_rules =
 
-          follow_mouse = 1
+        follow_mouse = 1
 
           touchpad {
               natural_scroll = no
@@ -116,6 +117,9 @@
       windowrulev2 = size 50% 50%, class:^(kitty)$,title:^(lf)$
       windowrulev2 = center, class:^(kitty)$,title:^(lf)$
 
+      windowrulev2 = stayfocused, title:^()$,class:^(steam)$
+      windowrulev2 = minsize 1 1, title:^()$,class:^(steam)$
+
       # See https://wiki.hyprland.org/Configuring/Keywords/ for more
       $mainMod = SUPER
 
@@ -135,6 +139,10 @@
       bind = , XF86AudioPlay, exec, playerctl play-pause
       bind = , XF86AudioNext, exec, playerctl next
       bind = , XF86AudioPrev, exec, playerctl previous
+
+      # Screenshot
+      bind = , Print, exec, $screenshot
+      bind = $mainMod, Print, exec, $screenshotEdit
 
       # Move focus with mainMod + arrow keys
       bind = $mainMod, left, movefocus, l
