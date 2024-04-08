@@ -4,8 +4,15 @@
     enable = true;
 
     settings = {
-      
+        exec-once = [
+            "waybar"
+            "swww init"
+            "systemctl --user start graphical-session.target"
+            "/nix/store/rhhd98016vskn8fcqday697qvqbssv2s-polkit-gnome-0.105/libexec/polkit-gnome-authentication-agent-1"
+            "nm-applet --indicator"
+        ];
     };
+
 
     extraConfig = ''
       #Default apps:
@@ -16,12 +23,6 @@
       $screenshotEdit = grim -g "$(slurp)" - | wl-copy && wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png | swappy -f - | dunstify "Screenshot saved" -t 1000
 
       monitor=,preferred,auto,auto
-
-      exec-once = waybar
-      exec-once = swww init
-
-      exec-once = /nix/store/rhhd98016vskn8fcqday697qvqbssv2s-polkit-gnome-0.105/libexec/polkit-gnome-authentication-agent-1
-      exec-once = systemctl --user start graphical-session.target
 
       env = XCURSOR_SIZE,24
 
