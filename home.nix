@@ -45,6 +45,8 @@ in {
     godot_4
     gimp
     lunar-client
+    lmms
+    qtractor
 
     # Utilities
     xfce.thunar
@@ -59,6 +61,8 @@ in {
     swappy
     wl-clipboard
     dolphin
+    swaynotificationcenter
+    networkmanagerapplet
     
     # Extra apps that are cool
     neofetch

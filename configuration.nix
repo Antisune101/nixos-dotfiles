@@ -88,7 +88,6 @@
 
     #Hyprland Apps
     kitty
-    dunst
     libnotify
     rofi
     waybar
