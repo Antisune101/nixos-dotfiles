@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 let 
+  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
   home = builtins.getEnv "HOME";
   dotfileDir = "${home}/.config/dotfiles";
   myEditor = "hx --config ~/.config/helix/config.toml";
@@ -42,11 +43,12 @@ in {
     # Apps I use regularly
     brave
     discord
-    godot_4
+    unstable.godot_4
     gimp
     lunar-client
     lmms
     qtractor
+    bottles
 
     # Utilities
     xfce.thunar
