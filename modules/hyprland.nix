@@ -11,6 +11,38 @@
             "/nix/store/rhhd98016vskn8fcqday697qvqbssv2s-polkit-gnome-0.105/libexec/polkit-gnome-authentication-agent-1"
             "nm-applet --indicator"
         ];
+
+        general = {
+            # See https://wiki.hyprland.org/Configuring/Variables/ for more
+
+            gaps_in = 5;
+            gaps_out = 10;
+            border_size = 2;
+            "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+            "col.inactive_border" = "rgba(595959aa)";
+
+            layout = "dwindle";
+
+            # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
+            allow_tearing = false;
+        };
+
+        decoration = {
+            # See https://wiki.hyprland.org/Configuring/Variables/ for more
+
+            rounding = 0;
+
+            blur = {
+              enabled = true;
+              size = 3;
+              passes = 1;
+            };
+
+            drop_shadow = "yes";
+            shadow_range = 4;
+            shadow_render_power = 3;
+            "col.shadow" = "rgba(1a1a1aee)";
+        };
     };
 
 
@@ -43,37 +75,7 @@
           sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
       }
 
-      general {
-          # See https://wiki.hyprland.org/Configuring/Variables/ for more
 
-          gaps_in = 5
-          gaps_out = 10
-          border_size = 2
-          col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
-          col.inactive_border = rgba(595959aa)
-
-          layout = dwindle
-
-          # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
-          allow_tearing = false
-      }
-
-      decoration {
-          # See https://wiki.hyprland.org/Configuring/Variables/ for more
-
-          rounding = 0
-    
-          blur {
-              enabled = true
-              size = 3
-              passes = 1
-          }
-
-          drop_shadow = yes
-          shadow_range = 4
-          shadow_render_power = 3
-          col.shadow = rgba(1a1a1aee)
-      }
 
       animations {
           enabled = yes
