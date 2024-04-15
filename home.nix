@@ -42,13 +42,15 @@ in {
   home.packages = with pkgs; [
     # Apps I use regularly
     brave
-    discord
+    unstable.discord
+    unstable.vesktop
     unstable.godot_4
     gimp
     lunar-client
     lmms
     qtractor
     bottles
+    obs-studio
 
     # Utilities
     xfce.thunar
