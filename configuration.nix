@@ -120,7 +120,7 @@
 
   xdg = {
     portal.enable = true;
-    portal.extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+    portal.extraPortals = with pkgs; [ xdg-desktop-portal-gtk xdg-desktop-portal-wlr ];
   };
 
   #Audio configuration
