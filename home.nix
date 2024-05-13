@@ -43,14 +43,23 @@ in {
     # Apps I use regularly
     brave
     unstable.discord
-    unstable.vesktop
+    vesktop
     unstable.godot_4
     gimp
     lunar-client
-    lmms
-    qtractor
+    okular
+    unstable.lmms
+    unstable.qtractor
+    unstable.reaper
+    unstable.obsidian
+    musescore
     bottles
+    wine
     obs-studio
+    yabridge
+    yabridgectl
+    superTuxKart
+    zoom-us
 
     # Utilities
     xfce.thunar
@@ -65,7 +74,6 @@ in {
     swappy
     wl-clipboard
     dolphin
-    swaynotificationcenter
     networkmanagerapplet
     
     # Extra apps that are cool
@@ -81,6 +89,18 @@ in {
     android-tools
     
   ];
+
+  services.dunst = {
+    enable = true;
+    package = pkgs.dunst;
+    settings.global = {
+      transparency = 0;
+    };
+    iconTheme = {
+      package = pkgs.papirus-icon-theme;
+      name =  "Papirus";
+    };
+  };
 
   xdg.mime.enable = true;
 

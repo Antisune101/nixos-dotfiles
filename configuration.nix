@@ -93,6 +93,8 @@
     waybar
     swww
 
+    appimage-run
+
     polkit-kde-agent
     polkit_gnome
 
