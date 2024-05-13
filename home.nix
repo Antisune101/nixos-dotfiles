@@ -86,7 +86,7 @@ in {
     shellAliases = myShellAliases;
 
     enableCompletion = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     # The spaces in 'PS1 = ""' cost me the better part of a day
     initExtra = ''
