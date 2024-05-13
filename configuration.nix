@@ -79,6 +79,8 @@
       enable = true;
       xwayland.enable = true;
     };
+
+    steam.enable = true;
   };
 
   # List packages installed in system profile. To search, run:
@@ -107,6 +109,8 @@
     swappy
     networkmanagerapplet
     swww
+    nwg-look
+    gnome.nautilus
 
   ];
 
