@@ -63,6 +63,7 @@ in {
 
     # Utilities
     xfce.thunar
+    ark
     mpv
     font-awesome
     nsxiv

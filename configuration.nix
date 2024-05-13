@@ -115,6 +115,12 @@
   programs.steam.enable = true;
 
 
+  programs.thunar = {
+    enable = true;
+    plugins = with pkgs.xfce; [ thunar-archive-plugin thunar-volman ];
+  };
+
+
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
