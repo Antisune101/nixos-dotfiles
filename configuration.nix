@@ -45,15 +45,21 @@
   i18n.defaultLocale = "en_ZA.UTF-8";
 
   # Configure keymap in X11
-  services.xserver = {
-    enable = true;
-    layout = "za";
-    xkbVariant = "";
-    excludePackages = [ pkgs.xterm ];
+  services = {
+    xserver = {
+      enable = true;
+      xkb = {
+        layout = "za";
+        variant = "";
+      };
+        excludePackages = [ pkgs.xterm ];
+    };
     displayManager.sddm = {
       enable = true;
       wayland.enable = true;
-    };
+  };
+
+    
     
   };
 
