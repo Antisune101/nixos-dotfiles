@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 
 let 
-  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
   home = builtins.getEnv "HOME";
   dotfileDir = "${home}/.config/dotfiles";
   myEditor = "hx --config ~/.config/helix/config.toml";
@@ -40,68 +39,13 @@ in {
   nixpkgs.config.allowUnfree = true;
   
   home.packages = with pkgs; [
-    # Apps I use regularly
     brave
-    unstable.discord
     vesktop
-    unstable.godot_4
+    godot_4
     gimp
-    lunar-client
-    okular
-    unstable.lmms
-    unstable.qtractor
-    unstable.reaper
-    unstable.obsidian
-    musescore
-    bottles
-    wine
-    obs-studio
-    yabridge
-    yabridgectl
-    superTuxKart
-    zoom-us
+    obsidian
 
-    # Utilities
-    xfce.thunar
-    ark
-    mpv
-    font-awesome
-    nsxiv
-    gnome.file-roller
-    p7zip
-    gnome.nautilus
-    grim
-    slurp
-    swappy
-    wl-clipboard
-    dolphin
-    networkmanagerapplet
-    
-    # Extra apps that are cool
-    neofetch
-    htop
-    btop
-    cava
-
-    # LSP
-    marksman
-    nodePackages.bash-language-server
-    jdk
-    android-tools
-    
   ];
-
-  services.dunst = {
-    enable = true;
-    package = pkgs.dunst;
-    settings.global = {
-      transparency = 0;
-    };
-    iconTheme = {
-      package = pkgs.papirus-icon-theme;
-      name =  "Papirus";
-    };
-  };
 
   xdg.mime.enable = true;
 

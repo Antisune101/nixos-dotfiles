@@ -14,124 +14,19 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  security.polkit.enable = true;
-
-  networking.hostName = "nixos"; # Define your hostname.
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-  };
-
-  services.blueman.enable = true;
-
-  # Set your time zone.
-  time.timeZone = "Africa/Johannesburg";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_ZA.UTF-8";
-    LC_IDENTIFICATION = "en_ZA.UTF-8";
-    LC_MEASUREMENT = "en_ZA.UTF-8";
-    LC_MONETARY = "en_ZA.UTF-8";
-    LC_NAME = "en_ZA.UTF-8";
-    LC_NUMERIC = "en_ZA.UTF-8";
-    LC_PAPER = "en_ZA.UTF-8";
-    LC_TELEPHONE = "en_ZA.UTF-8";
-    LC_TIME = "en_ZA.UTF-8";
-  };
-
-  # Configure keymap in X11
-  services.xserver = {
-    enable = true;
-    displayManager.sddm.enable = true;
-    xkb.layout = "us";
-    xkb.variant = "";
-
-    desktopManager = {
-      xterm.enable = false;
-    };
-
-    excludePackages = [ pkgs.xterm ];
-  };
-
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.antisune = {
-    isNormalUser = true;
-    description = "Ewan Bester";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
-    shell = pkgs.zsh;
-  };
-
-  # Enable automatic login for the user.
-  services.getty.autologinUser = "antisune";
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim
-    helix
-    nil
-    gparted
-    unzip
-    zip
-
-    #Hyprland Apps
-    kitty
-    libnotify
-    rofi
-    waybar
-    swww
-
-    appimage-run
-
-    polkit-kde-agent
-    polkit_gnome
-
-
-    wireplumber
-    playerctl
-  ];
-
-
-  fonts.packages = with pkgs; [
-    nerdfonts
-  ];
-
-
-
-  programs.zsh.enable = true;
-
-  programs.steam.enable = true;
-
-
-  programs.thunar = {
-    enable = true;
-    plugins = with pkgs.xfce; [ thunar-archive-plugin thunar-volman ];
-  };
-
-
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
+  hardware.opengl.enable = true;
 
   xdg = {
     portal.enable = true;
     portal.extraPortals = with pkgs; [ xdg-desktop-portal-gtk xdg-desktop-portal-wlr ];
   };
 
-  #Audio configuration
+  networking.hostName = "nixos"; # Define your hostname.
+
+  # Enable networking
+  networking.networkmanager.enable = true;
+
+  # Enable audio
   sound.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -143,10 +38,86 @@
   };
 
 
-  hardware.opengl.enable = true;
+  # Set your time zone.
+  time.timeZone = "Africa/Johannesburg";
+
+  # Select internationalisation properties.
+  i18n.defaultLocale = "en_ZA.UTF-8";
+
+  # Configure keymap in X11
+  services.xserver = {
+    enable = true;
+    layout = "za";
+    xkbVariant = "";
+    excludePackages = [ pkgs.xterm ];
+    displayManager.sddm = {
+      enable = true;
+      wayland.enable = true;
+    };
+    
+  };
+
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.antisune = {
+    isNormalUser = true;
+    description = "Ewan Bester";
+    extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [];
+  };
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
+  programs = {
+    hyprland = {
+      enable = true;
+      xwayland.enable = true;
+    };
+  };
+
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+    git
+    helix
+    neofetch
+    btop
+    kitty
+    rofi
+    swaynotificationcenter
+    libnotify
+    wireplumber
+    wl-clipboard
+    xdg-desktop-portal-hyprland
+    xdg-utils
+    xdg-desktop-portal
+    xdg-desktop-portal-gtk
+    polkit_gnome
+    gparted
+    mpv
+    nsxiv
+    grim
+    slurp
+    swappy
+    networkmanagerapplet
+    swww
+
+  ];
+
+
+  environment.sessionVariables = {
+    POLKIT_AUTH_AGANET = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+    XDG_SESSION_TYPE = "wayland";
+    XDG_CURRENT_DESKTOP = "Hyprland";
+    XDG_SESSION_DESKTOP = "Hyprland";
+    NIXOS_XDG_OPEN_USE_PORTAL = "1";
+    GTK_USE_PORTAL = "1";
+  };
+
 
   system.autoUpgrade.enable = true;
 
   system.stateVersion = "23.11"; # Did you read the comment?
+
 
 }
