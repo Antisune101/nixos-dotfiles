@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 let 
+  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
   home = builtins.getEnv "HOME";
   dotfileDir = "${home}/.config/dotfiles";
   myEditor = "hx --config ~/.config/helix/config.toml";
