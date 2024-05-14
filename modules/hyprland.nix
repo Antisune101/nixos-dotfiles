@@ -8,7 +8,7 @@
             "waybar"
             "swww init"
             "systemctl --user start graphical-session.target"
-            "/nix/store/rhhd98016vskn8fcqday697qvqbssv2s-polkit-gnome-0.105/libexec/polkit-gnome-authentication-agent-1"
+            "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
             "nm-applet --indicator"
             "blueman-applet"
         ];
