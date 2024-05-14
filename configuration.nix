@@ -45,18 +45,16 @@
   i18n.defaultLocale = "en_ZA.UTF-8";
 
   # Configure keymap in X11
-  services = {
-    xserver = {
+  services.xserver = {
       enable = true;
       xkb = {
         layout = "za";
         variant = "";
       };
         excludePackages = [ pkgs.xterm ];
-    };
-    displayManager.sddm = {
-      enable = true;
-      wayland.enable = true;
+      displayManager.sddm = {
+        enable = true;
+        wayland.enable = true;
   };
 
     
@@ -88,6 +86,8 @@
   environment.systemPackages = with pkgs; [
     git
     helix
+    lf
+    fzf
     neofetch
     btop
     kitty
@@ -95,6 +95,7 @@
     swaynotificationcenter
     libnotify
     wireplumber
+    playerctl
     wl-clipboard
     xdg-desktop-portal-hyprland
     xdg-utils

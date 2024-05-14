@@ -86,7 +86,6 @@ in {
     shellAliases = myShellAliases;
 
     enableCompletion = true;
-    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     # The spaces in 'PS1 = ""' cost me the better part of a day
     initExtra = ''
@@ -143,7 +142,7 @@ in {
 
   qt = {
     enable = true;
-    platformTheme.name = "gtk";
+    platformTheme = "gtk";
     style.name = "adwaita-dark";
   };
 
