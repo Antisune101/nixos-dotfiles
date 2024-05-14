@@ -134,6 +134,8 @@
             "$mainMod, E, exec, $filemanager"
             "$mainMod, V, togglefloating, "
             "$mainMod, R, exec, $menu"
+            "$mainMod, F, fullscreen,"
+            "$mainMod, G, layoutmsg, swapwithmaster"
             "$mainMod, P, pseudo, # dwindle"
             "$mainMod, J, togglesplit, # dwindle"
 
