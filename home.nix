@@ -5,8 +5,6 @@ let
   dotfileDir = "${home}/.config/dotfiles";
   myEditor = "hx --config ~/.config/helix/config.toml";
   myShellAliases = {
-    hypr = "${myEditor} ~/.config/dotfiles/modules/hyprland.nix";
-
     dots = "cd ~/.config/dotfiles";
     home = "${myEditor} ~/.config/dotfiles/home.nix";
     conf = "sudo ${myEditor} ~/.config/dotfiles/configuration.nix";
