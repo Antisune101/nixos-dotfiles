@@ -45,7 +45,8 @@
   i18n.defaultLocale = "en_ZA.UTF-8";
 
   # Configure keymap in X11
-  services.xserver = {
+  services = {
+    xserver = {
       enable = true;
       xkb = {
         layout = "za";
@@ -55,9 +56,12 @@
       displayManager.sddm = {
         enable = true;
         wayland.enable = true;
-  };
+      };
+    };
 
-    
+    devmon.enable = true;
+    gvfs.enable = true;
+    udisks2.enable = true;
     
   };
 
@@ -112,6 +116,9 @@
     swww
     nwg-look
     gnome.nautilus
+    usbutils
+    udiskie
+    udisks
 
   ];
 
