@@ -17,7 +17,7 @@ in {
   imports = [
     "${dotfileDir}/modules/hyprland.nix"
     "${dotfileDir}/modules/waybar.nix"
-    "${dotfileDir}/modules/lf.nix"
+    "${dotfileDir}/modules/lf/lf.nix"
   ];
 
   home.username = "antisune";
@@ -38,11 +38,12 @@ in {
   nixpkgs.config.allowUnfree = true;
   
   home.packages = with pkgs; [
-    brave
-    vesktop
-    godot_4
-    gimp
-    obsidian
+    unstable.brave
+    unstable.vesktop
+    unstable.godot_4
+    unstable.gimp
+    unstable.obsidian
+    unstable.blender
 
   ];
 

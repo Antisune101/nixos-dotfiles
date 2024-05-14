@@ -102,8 +102,8 @@ in {
     btop
     kitty
     rofi
-    swaynotificationcenter
-    libnotify
+    unstable.swaynotificationcenter
+    unstable.libnotify
     wireplumber
     playerctl
     wl-clipboard
@@ -126,6 +126,7 @@ in {
     usbutils
     udiskie
     udisks
+    unstable.hyprlock
 
   ];
 
