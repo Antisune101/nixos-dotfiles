@@ -106,6 +106,7 @@
     xdg-desktop-portal
     xdg-desktop-portal-gtk
     polkit_gnome
+    xorg.xhost
     gparted
     mpv
     nsxiv
@@ -124,7 +125,7 @@
 
 
   environment.sessionVariables = {
-    POLKIT_AUTH_AGANET = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+    POLKIT_AUTH_AGENT = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
     XDG_SESSION_TYPE = "wayland";
     XDG_CURRENT_DESKTOP = "Hyprland";
     XDG_SESSION_DESKTOP = "Hyprland";
