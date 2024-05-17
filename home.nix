@@ -44,6 +44,7 @@ in {
     unstable.gimp
     unstable.obsidian
     unstable.blender
+    unstable.obs-studio
 
   ];
 
