@@ -86,6 +86,7 @@ in {
     };
 
     steam.enable = true;
+    gamemode.enable = true;
   };
 
   fonts.packages = with pkgs; [
@@ -128,6 +129,8 @@ in {
     udiskie
     udisks
     unstable.hyprlock
+    mangohud
+    protonup
 
   ];
 
@@ -139,6 +142,7 @@ in {
     XDG_SESSION_DESKTOP = "Hyprland";
     NIXOS_XDG_OPEN_USE_PORTAL = "1";
     GTK_USE_PORTAL = "1";
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/antisune/.steam/root/compatibilitytools.d";
   };
 
 
