@@ -76,6 +76,8 @@ in {
       unstable.libreoffice
       unstable.mangohud
       unstable.protonup
+      speedcrunch
+      gnome.gnome-calculator
     ];
   };
 
