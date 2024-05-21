@@ -64,6 +64,7 @@ in {
     isNormalUser = true;
     description = "Ewan Bester";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
     packages = with pkgs; [   
       unstable.brave
       unstable.vesktop
@@ -118,6 +119,8 @@ in {
   ];
 
   programs = {
+    zsh.enable = true;
+    
     hyprland = {
       enable = true;
       xwayland.enable = true;

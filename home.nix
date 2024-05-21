@@ -81,7 +81,7 @@ in {
     syntaxHighlighting.enable = true;
     # The spaces in 'PS1 = ""' cost me the better part of a day
     initExtra = ''
-      PS1="%F{yellow}[ %n ]%F{white}@%F{yellow}[ %~ ]%F{white}$ "
+      PS1="%F{red}[%F{yellow}%n%F{green}@%F{blue}%m %F{magenta}%~%F{red}]%F{white}$ "
     '';
   };
 
