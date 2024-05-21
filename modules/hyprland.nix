@@ -9,8 +9,10 @@
             "swww init"
             "systemctl --user start graphical-session.target"
             "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
+            "xhost +"
             "nm-applet --indicator"
             "blueman-applet"
+
         ];
 
         general = {
