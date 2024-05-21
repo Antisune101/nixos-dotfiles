@@ -8,8 +8,10 @@ let
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
 in {
   imports =
-    [ # Include the results of the hardware scan.
+    [ 
       /etc/nixos/hardware-configuration.nix
+      ./modules/audio-config.nix
+      <home-manager/nixos>
     ];
 
   # Bootloader.
@@ -27,18 +29,6 @@ in {
 
   # Enable networking
   networking.networkmanager.enable = true;
-
-  # Enable audio
-  sound.enable = true;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-  };
-
 
   # Set your time zone.
   time.timeZone = "Africa/Johannesburg";
@@ -68,30 +58,29 @@ in {
     
   };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  home-manager.users.antisune = import ./home.nix;
+  
   users.users.antisune = {
     isNormalUser = true;
     description = "Ewan Bester";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    packages = with pkgs; [   
+      unstable.brave
+      unstable.vesktop
+      unstable.godot_4
+      unstable.gimp
+      unstable.obsidian
+      unstable.blender
+      unstable.obs-studio
+      unstable.libreoffice
+      unstable.mangohud
+      unstable.protonup
+    ];
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  programs = {
-    hyprland = {
-      enable = true;
-      xwayland.enable = true;
-    };
-
-    steam.enable = true;
-    gamemode.enable = true;
-  };
-
-  fonts.packages = with pkgs; [
-    nerdfonts
-  ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -106,8 +95,6 @@ in {
     rofi
     unstable.swaynotificationcenter
     unstable.libnotify
-    wireplumber
-    playerctl
     wl-clipboard
     xdg-desktop-portal-hyprland
     xdg-utils
@@ -123,15 +110,25 @@ in {
     swappy
     networkmanagerapplet
     swww
-    nwg-look
     gnome.nautilus
     usbutils
     udiskie
     udisks
-    unstable.hyprlock
-    mangohud
-    protonup
 
+  ];
+
+  programs = {
+    hyprland = {
+      enable = true;
+      xwayland.enable = true;
+    };
+
+    steam.enable = true;
+    gamemode.enable = true;
+  };
+
+  fonts.packages = with pkgs; [
+    nerdfonts
   ];
 
 
@@ -147,6 +144,12 @@ in {
 
 
   system.autoUpgrade.enable = true;
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
 
   system.stateVersion = "23.11"; # Did you read the comment?
 

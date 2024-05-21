@@ -2,8 +2,7 @@
 
 let 
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
-  home = builtins.getEnv "HOME";
-  dotfileDir = "${home}/.config/dotfiles";
+  dotfileDir = "/home/antisune/.config/dotfiles";
   myEditor = "hx --config ~/.config/helix/config.toml";
   myShellAliases = {
     dots = "cd ~/.config/dotfiles";
@@ -38,14 +37,6 @@ in {
   nixpkgs.config.allowUnfree = true;
   
   home.packages = with pkgs; [
-    unstable.brave
-    unstable.vesktop
-    unstable.godot_4
-    unstable.gimp
-    unstable.obsidian
-    unstable.blender
-    unstable.obs-studio
-
   ];
 
   xdg.mime.enable = true;
@@ -122,6 +113,14 @@ in {
     enable = true;
     config = {
       theme = "gruvbox-dark";
+    };
+  };
+
+  programs.btop = {
+    enable = true;
+    settings = {
+      color_theme = "gruvbox_dark";
+      vim_keys = true;
     };
   };
 
