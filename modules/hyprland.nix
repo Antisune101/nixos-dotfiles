@@ -68,6 +68,10 @@
             kb_rules = "";
 
             follow_mouse = 1;
+            # float_switch_override_focus = true;
+            # mouse_refocus = false;
+
+            numlock_by_default = true;
 
             touchpad = {
                 natural_scroll = "no";
@@ -122,8 +126,12 @@
             # size 50% 50%, class:^(kitty)$,title:^(lf)$
             # center, class:^(kitty)$,title:^(lf)$
 
+        ];
+
+        windowrulev2 = [            
             "stayfocused, title:^()$,class:^(steam)$"
             "minsize 1 1, title:^()$,class:^(steam)$"
+            # "float, title:^(Steam Settings)$,class:^(steam)$"
         ];
 
         # See https://wiki.hyprland.org/Configuring/Keywords/ for more

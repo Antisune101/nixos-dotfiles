@@ -130,6 +130,7 @@ in {
 
     steam.enable = true;
     gamemode.enable = true;
+
   };
 
   fonts.packages = with pkgs; [
