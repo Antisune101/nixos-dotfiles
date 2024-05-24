@@ -78,6 +78,7 @@ in {
       unstable.protonup
       speedcrunch
       gnome.gnome-calculator
+      adwsteamgtk
     ];
   };
 
@@ -92,6 +93,7 @@ in {
     helix
     lf
     fzf
+    broot
     neofetch
     btop
     kitty
@@ -128,7 +130,11 @@ in {
       xwayland.enable = true;
     };
 
-    steam.enable = true;
+    steam = {
+      enable = true;
+      gamescopeSession.enable = true;
+    };
+
     gamemode.enable = true;
 
   };
