@@ -52,8 +52,8 @@
         "$terminal" = "kitty";
         "$menu" = "rofi -show drun";
         "$filemanager" = "kitty lf";
-        "$screenshot" = ''grim -g "$(slurp)" - | wl-copy && wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png | dunstify "Screenshot saved" -t 1000'';
-        "$screenshotEdit" = ''grim -g "$(slurp)" - | wl-copy && wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png | swappy -f - | dunstify "Screenshot saved" -t 1000'';
+        "$screenshot" = ''grim -g "$(slurp)" - | wl-copy && wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png | notify-send "Screenshot saved" -t 1000'';
+        "$screenshotEdit" = ''grim -g "$(slurp)" - | swappy -f - -o - | wl-copy && wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png | notify-send "Screenshot being edited" -t 1000'';
 
         monitor = ",preferred,auto,auto";
 
