@@ -120,6 +120,7 @@
         windowrule = [
             "float, ^(thunar)$"
             "float, ^(org.gnome.Calculator)$"
+            "float, ^(.blueman-manager-wrapped)$"
             # Way too much effort into making lf look nice Edit: It all went to waste (at least for now)
 
             # float,  class:^(kitty)$,title:^(lf)$

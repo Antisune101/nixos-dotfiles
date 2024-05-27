@@ -11,6 +11,7 @@ in {
     [ 
       /etc/nixos/hardware-configuration.nix
       ./modules/audio-config.nix
+      ./modules/bluetooth.nix
       <home-manager/nixos>
     ];
 
@@ -51,6 +52,7 @@ in {
         autoNumlock = true;
       };
     };
+
 
     devmon.enable = true;
     gvfs.enable = true;
