@@ -103,10 +103,10 @@ in {
     unstable.swaynotificationcenter
     unstable.libnotify
     wl-clipboard
-    xdg-desktop-portal-hyprland
-    xdg-utils
-    xdg-desktop-portal
-    xdg-desktop-portal-gtk
+    unstable.xdg-desktop-portal-hyprland
+    unstable. xdg-utils
+    unstable. xdg-desktop-portal
+    unstable. xdg-desktop-portal-gtk
     polkit_gnome
     xorg.xhost
     gparted
