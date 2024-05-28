@@ -14,9 +14,9 @@ let
 in {
 
   imports = [
-    "${dotfileDir}/modules/hyprland.nix"
-    "${dotfileDir}/modules/waybar.nix"
-    "${dotfileDir}/modules/lf/lf.nix"
+    ./modules/hyprland.nix
+    ./modules/waybar.nix
+    ./modules/lf/lf.nix
   ];
 
   home.username = "antisune";
@@ -123,6 +123,7 @@ in {
       vim_keys = true;
     };
   };
+
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {
