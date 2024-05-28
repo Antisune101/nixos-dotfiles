@@ -12,6 +12,7 @@ in {
       /etc/nixos/hardware-configuration.nix
       ./modules/audio-config.nix
       ./modules/bluetooth.nix
+      ( import ./modules/lsp.nix { inherit pkgs unstable; })
       <home-manager/nixos>
     ];
 
