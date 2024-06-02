@@ -120,6 +120,9 @@
         windowrule = [
             "float, ^(thunar)$"
             "float, ^(org.gnome.Calculator)$"
+            "float, ^(org.gnome.Nautilus)$"
+            "size 50% 50%, ^(org.gnome.Nautilus)$"
+            "center, ^(org.gnome.Nautilus)$"
             "float, ^(.blueman-manager-wrapped)$"
             # Way too much effort into making lf look nice Edit: It all went to waste (at least for now)
 
