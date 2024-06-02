@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 let
@@ -66,37 +62,23 @@ in {
   users.users.antisune = {
     isNormalUser = true;
     description = "Ewan Bester";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "adbusers" ];
     shell = pkgs.zsh;
-    packages = with pkgs; [   
-      unstable.brave
-      unstable.vesktop
-      unstable.godot_4
-      unstable.gimp
-      unstable.obsidian
-      unstable.blender
-      unstable.obs-studio
-      unstable.libreoffice
-      unstable.mangohud
-      unstable.protonup
-      speedcrunch
-      gnome.gnome-calculator
-      adwsteamgtk
-    ];
+    packages = with pkgs; [];
   };
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     git
-    helix
+    unstable.helix
     lf
     fzf
-    broot
     neofetch
     btop
     kitty
@@ -105,9 +87,9 @@ in {
     unstable.libnotify
     wl-clipboard
     unstable.xdg-desktop-portal-hyprland
-    unstable. xdg-utils
-    unstable. xdg-desktop-portal
-    unstable. xdg-desktop-portal-gtk
+    unstable.xdg-utils
+    unstable.xdg-desktop-portal
+    unstable.xdg-desktop-portal-gtk
     polkit_gnome
     xorg.xhost
     gparted
@@ -118,10 +100,27 @@ in {
     swappy
     networkmanagerapplet
     swww
-    gnome.nautilus
+    unstable.gnome.nautilus
     usbutils
     udiskie
     udisks
+    unstable.brave
+    unstable.vesktop
+    unstable.godot_4
+    unstable.gimp
+    unstable.obsidian
+    unstable.blender
+    unstable.obs-studio
+    unstable.libreoffice
+    unstable.mangohud
+    unstable.protonup
+    speedcrunch
+    gnome.gnome-calculator
+    adwsteamgtk
+    scrcpy
+    localsend
+    android-tools
+    android-udev-rules
 
   ];
 
@@ -139,6 +138,8 @@ in {
     };
 
     gamemode.enable = true;
+
+    adb.enable = true;
 
   };
 

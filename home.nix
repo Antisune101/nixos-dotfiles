@@ -67,61 +67,64 @@ in {
   };
 
 
-  programs.bash = {
-    enable = true;
-    shellAliases = myShellAliases;
-  };
-
-  programs.zsh =  {
-    enable = true;
-    dotDir = ".config/zsh";
-    shellAliases = myShellAliases;
-
-    enableCompletion = true;
-    syntaxHighlighting.enable = true;
-    # The spaces in 'PS1 = ""' cost me the better part of a day
-    initExtra = ''
-      PS1="%F{red}[%F{yellow}%n%F{green}@%F{blue}%m %F{magenta}%~%F{red}]%F{white}$ "
-    '';
-  };
-
-  programs.rofi = {
-    enable = true;
-    theme = "gruvbox-dark-hard";
-    extraConfig = {
-      show-icons = true;
-      display-drun = "Applications";
-      drun-display-format = "{name}";
+  programs = {
+    bash = {
+      enable = true;
+      shellAliases = myShellAliases;
     };
-  };
 
-  programs.helix = {
-    enable = true;
-    settings.theme = "gruvbox_dark_hard";
-  };
+    zsh =  {
+      enable = true;
+      dotDir = ".config/zsh";
+      shellAliases = myShellAliases;
 
-  programs.git = {
-    enable = true;
-    userName = "Antisune101";
-    userEmail = "ewanbester72@gmail.com";
-    extraConfig = {
-      init.defaultBranch = "main";
+      enableCompletion = true;
+      syntaxHighlighting.enable = true;
+      # The spaces in 'PS1 = ""' cost me the better part of a day
+      initExtra = ''
+        PS1="%F{red}[%F{yellow}%n%F{green}@%F{blue}%m %F{magenta}%~%F{red}]%F{white}$ "
+      '';
     };
-  };
 
-  programs.bat = {
-    enable = true;
-    config = {
-      theme = "gruvbox-dark";
+    rofi = {
+      enable = true;
+      theme = "gruvbox-dark-hard";
+      extraConfig = {
+        show-icons = true;
+        display-drun = "Applications";
+        drun-display-format = "{name}";
+      };
     };
-  };
 
-  programs.btop = {
-    enable = true;
-    settings = {
-      color_theme = "gruvbox_dark";
-      vim_keys = true;
+    helix = {
+      enable = true;
+      settings.theme = "gruvbox_dark_hard";
     };
+
+    git = {
+      enable = true;
+      userName = "Antisune101";
+      userEmail = "ewanbester72@gmail.com";
+      extraConfig = {
+        init.defaultBranch = "main";
+      };
+    };
+
+    bat = {
+      enable = true;
+      config = {
+        theme = "gruvbox-dark";
+      };
+    };
+
+    btop = {
+      enable = true;
+      settings = {
+        color_theme = "gruvbox_dark";
+        vim_keys = true;
+      };
+    };
+
   };
 
 
