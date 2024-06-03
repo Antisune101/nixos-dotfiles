@@ -8,6 +8,7 @@ in {
       ./modules/audio-config.nix
       ./modules/bluetooth.nix
       ( import ./modules/lsp.nix { inherit pkgs unstable; })
+      ./modules/stylix/stylix.nix
       inputs.home-manager.nixosModules.default
     ];
 
