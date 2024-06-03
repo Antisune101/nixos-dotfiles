@@ -120,6 +120,7 @@ in {
     android-tools
     android-udev-rules
     niv
+    pavucontrol
 
   ];
 

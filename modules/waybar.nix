@@ -33,6 +33,10 @@
           on-click = "pavucontrol";
         };
 
+        clock = {
+            format = "󰥔 {:%H:%M}";
+        };
+
         tray.spacing = 10;
       };
     };

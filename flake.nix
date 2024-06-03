@@ -6,6 +6,7 @@
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    stylix.url = "github:danth/stylix/release-23.11";
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs:
@@ -17,6 +18,7 @@
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit pkgs-unstable inputs; };
       modules = [
+        inputs.stylix.nixosModules.stylix
         ./configuration.nix
       ];  
     };

@@ -5,8 +5,9 @@ let
   myEditor = "hx --config ~/.config/helix/config.toml";
   myShellAliases = {
     dots = "cd ~/.config/dotfiles";
-    home = "${myEditor} ~/.config/dotfiles/home.nix";
     conf = "sudo ${myEditor} ~/.config/dotfiles/configuration.nix";
+    home = "${myEditor} ~/.config/dotfiles/home.nix";
+    flake = "${myEditor} ~/.config/dotfiles/flake.nix";
     reshome = "home-manager switch";
     resnix = "sudo nixos-rebuild switch --flake ${dotfileDir}";
   };
@@ -26,12 +27,12 @@ in {
 
 
 
-  home.pointerCursor = {
-    gtk.enable = true;
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Classic";
-    size = 12;
-  };
+  # home.pointerCursor = {
+  #   gtk.enable = true;
+  #   package = pkgs.bibata-cursors;
+  #   name = "Bibata-Modern-Classic";
+  #   size = 12;
+  # };
 
 
   
@@ -55,8 +56,8 @@ in {
 
   programs.kitty = {
     enable = true;
-    theme = "Gruvbox Dark Hard";
-    font.name = "DejavuSansM Nerd Font Mono";
+    # theme = "Gruvbox Dark Hard";
+    # font.name = "DejavuSansM Nerd Font Mono";
     extraConfig = ''
       confirm_os_window_close 0
       background_opacity 0.8
@@ -100,7 +101,7 @@ in {
     bat = {
       enable = true;
       config = {
-        theme = "gruvbox-dark";
+    #     theme = "gruvbox-dark";
       };
     };
 
@@ -123,10 +124,10 @@ in {
 
   gtk = {
     enable = true;
-    theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome.gnome-themes-extra;
-    };
+    # theme = {
+      # name = "Adwaita-dark";
+    #   package = pkgs.gnome.gnome-themes-extra;
+    # };
     cursorTheme = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Classic";
@@ -139,8 +140,8 @@ in {
 
   qt = {
     enable = true;
-    platformTheme = "gtk";
-    style.name = "adwaita-dark";
+    # platformTheme = "gtk";
+    # style.name = "adwaita-dark";
   };
 
 
