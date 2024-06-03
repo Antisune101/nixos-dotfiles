@@ -1,15 +1,14 @@
-{ config, pkgs, ... }:
-
+{ config, pkgs, pkgs-unstable, inputs, ... }:
 let
-  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+  unstable = pkgs-unstable;
 in {
   imports =
     [ 
-      /etc/nixos/hardware-configuration.nix
+      ./hardware-configuration.nix
       ./modules/audio-config.nix
       ./modules/bluetooth.nix
       ( import ./modules/lsp.nix { inherit pkgs unstable; })
-      <home-manager/nixos>
+      inputs.home-manager.nixosModules.default
     ];
 
   # Bootloader.
@@ -57,7 +56,10 @@ in {
     
   };
 
-  home-manager.users.antisune = import ./home.nix;
+  home-manager = {
+    extraSpecialArgs = { inherit inputs unstable; };
+    users.antisune = import ./home.nix;
+  };
   
   users.users.antisune = {
     isNormalUser = true;
@@ -67,13 +69,8 @@ in {
     packages = with pkgs; [];
   };
 
-  # Allow unfree packages
-  nixpkgs.config = {
-    allowUnfree = true;
-  };
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  nixpkgs.config.allowUnfree = true;
+  
   environment.systemPackages = with pkgs; [
     git
     unstable.helix
@@ -121,6 +118,7 @@ in {
     localsend
     android-tools
     android-udev-rules
+    niv
 
   ];
 
@@ -161,10 +159,13 @@ in {
 
   system.autoUpgrade.enable = true;
 
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 30d";
+  nix = {
+    settings.experimental-features = [ "nix-command" "flakes" ];
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 30d";
+    };
   };
 
   system.stateVersion = "23.11"; # Did you read the comment?

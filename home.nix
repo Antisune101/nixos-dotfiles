@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 
 let 
-  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
   dotfileDir = "/home/antisune/.config/dotfiles";
   myEditor = "hx --config ~/.config/helix/config.toml";
   myShellAliases = {
@@ -9,13 +8,14 @@ let
     home = "${myEditor} ~/.config/dotfiles/home.nix";
     conf = "sudo ${myEditor} ~/.config/dotfiles/configuration.nix";
     reshome = "home-manager switch";
-    resnix = "sudo nixos-rebuild switch";
+    resnix = "sudo nixos-rebuild switch --flake ${dotfileDir}";
   };
 in {
 
   imports = [
     ./modules/hyprland.nix
     ./modules/waybar.nix
+    ./modules/rofi.nix
     ./modules/lf/lf.nix
   ];
 
@@ -34,10 +34,7 @@ in {
   };
 
 
-  nixpkgs.config.allowUnfree = true;
   
-  home.packages = with pkgs; [
-  ];
 
   xdg.mime.enable = true;
 
@@ -84,16 +81,6 @@ in {
       initExtra = ''
         PS1="%F{red}[%F{yellow}%n%F{green}@%F{blue}%m %F{magenta}%~%F{red}]%F{white}$ "
       '';
-    };
-
-    rofi = {
-      enable = true;
-      theme = "gruvbox-dark-hard";
-      extraConfig = {
-        show-icons = true;
-        display-drun = "Applications";
-        drun-display-format = "{name}";
-      };
     };
 
     helix = {
