@@ -42,13 +42,13 @@ in {
         variant = "";
       };
         excludePackages = [ pkgs.xterm ];
-      displayManager.sddm = {
-        enable = true;
-        wayland.enable = true;
-        autoNumlock = true;
-      };
     };
 
+    displayManager.sddm = {
+      enable = true;
+      wayland.enable = true;
+      autoNumlock = true;
+    };
 
     devmon.enable = true;
     gvfs.enable = true;
