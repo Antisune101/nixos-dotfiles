@@ -1,13 +1,12 @@
-{ config, pkgs, pkgs-unstable, inputs, ... }:
+{ config, pkgs, inputs, ... }:
 let
-  unstable = pkgs-unstable;
 in {
   imports =
     [ 
       ./hardware-configuration.nix
       ./modules/audio-config.nix
       ./modules/bluetooth.nix
-      ( import ./modules/lsp.nix { inherit pkgs unstable; })
+      ./modules/lsp.nix
       ./modules/stylix/stylix.nix
       inputs.home-manager.nixosModules.default
     ];
@@ -58,7 +57,7 @@ in {
   };
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs unstable; };
+    extraSpecialArgs = { inherit inputs;  };
     users.antisune = import ./home.nix;
   };
   
@@ -74,20 +73,20 @@ in {
   
   environment.systemPackages = with pkgs; [
     git
-    unstable.helix
+    helix
     lf
     fzf
     neofetch
     btop
     kitty
     rofi
-    unstable.swaynotificationcenter
-    unstable.libnotify
+    swaynotificationcenter
+    libnotify
     wl-clipboard
-    unstable.xdg-desktop-portal-hyprland
-    unstable.xdg-utils
-    unstable.xdg-desktop-portal
-    unstable.xdg-desktop-portal-gtk
+    xdg-desktop-portal-hyprland
+    xdg-utils
+    xdg-desktop-portal
+    xdg-desktop-portal-gtk
     polkit_gnome
     xorg.xhost
     gparted
@@ -98,20 +97,20 @@ in {
     swappy
     networkmanagerapplet
     swww
-    unstable.gnome.nautilus
+    gnome.nautilus
     usbutils
     udiskie
     udisks
-    unstable.brave
-    unstable.vesktop
-    unstable.godot_4
-    unstable.gimp
-    unstable.obsidian
-    unstable.blender
-    unstable.obs-studio
-    unstable.libreoffice
-    unstable.mangohud
-    unstable.protonup
+    brave
+    vesktop
+    godot_4
+    gimp
+    obsidian
+    blender
+    obs-studio
+    libreoffice
+    mangohud
+    protonup
     speedcrunch
     gnome.gnome-calculator
     adwsteamgtk

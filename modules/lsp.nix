@@ -1,9 +1,9 @@
-{ pkgs, unstable, ... }:
+{ pkgs,  ... }:
 {
 
   environment.systemPackages = with pkgs; [
     nil
-    unstable.python312Packages.python-lsp-server
+    python312Packages.python-lsp-server
     marksman
     nodePackages_latest.vscode-css-languageserver-bin
     nodePackages_latest.vscode-html-languageserver-bin
