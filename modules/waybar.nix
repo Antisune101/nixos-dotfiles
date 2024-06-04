@@ -11,7 +11,7 @@
 
         modules-left = [ "hyprland/workspaces" "hyprland/window" ];
         # modules-center = [ ];
-        modules-right = [ "pulseaudio" "tray" "clock" ];
+        modules-right = [ "custom/swaync" "pulseaudio" "tray" "clock" ];
 
         pulseaudio = {
           # // "scroll-step": 1, // %, can be a float
@@ -46,6 +46,13 @@
             icon-size = 15;
             spacing = 10;
         };
+
+        "custom/swaync" = {
+            format = " ";
+            on-click = "swaync-client -t";
+            on-right-click = "swaync-client -C";
+            tooltip = false;
+        };
       };
     };
       style = ''
@@ -74,11 +81,9 @@
             box-shadow: none;
         	text-shadow: none;
             padding: 0px;
-            border-radius: 7px;
-            padding-right: 0px;
-            padding-left: 4px;
-            margin-right: 7px;
-            margin-left: 7px;
+            border-radius: 0px;
+            padding-right: 3px;
+            padding-left: 3px;
             color: @theme_text_color;
             animation: gradient_f 2s ease-in infinite;
             transition: all 0.2s cubic-bezier(.55,-0.68,.48,1.682);
@@ -148,7 +153,7 @@
 
         /* workspace window block */
         #workspaces {
-            border-radius: 9px 9px 9px 9px;
+            margin: 0px;
             background: mix(@theme_unfocused_base_color,white,0.1);
         }
 
