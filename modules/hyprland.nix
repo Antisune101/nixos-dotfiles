@@ -121,6 +121,7 @@
             "float, ^(thunar)$"
             "float, ^(org.gnome.Calculator)$"
             "float, ^(org.gnome.Nautilus)$"
+            "float, ^(pavucontrol)"
             "size 50% 50%, ^(org.gnome.Nautilus)$"
             "center, ^(org.gnome.Nautilus)$"
             "float, ^(.blueman-manager-wrapped)$"
