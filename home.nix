@@ -54,18 +54,17 @@ in {
     defaultApplications = myApps;
   };
 
-  programs.kitty = {
-    enable = true;
-    # theme = "Gruvbox Dark Hard";
-    # font.name = "DejavuSansM Nerd Font Mono";
-    extraConfig = ''
-      confirm_os_window_close 0
-      background_opacity 0.8
-    '';
-  };
-
-
+  
   programs = {
+    kitty = {
+      enable = true;
+      # theme = "Gruvbox Dark Hard";
+      # font.name = "DejavuSansM Nerd Font Mono";
+      extraConfig = ''
+        confirm_os_window_close 0
+        background_opacity 0.8
+      '';
+    };
     bash = {
       enable = true;
       shellAliases = myShellAliases;
