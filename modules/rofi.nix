@@ -12,5 +12,4 @@
       drun-display-format = "{name}";
     };
   };
-
 }

@@ -1,6 +1,4 @@
-{ config, pkgs, inputs, ... }:
-let
-in {
+{ config, pkgs, inputs, ... }: {
   imports =
     [ 
       ./hardware-configuration.nix
