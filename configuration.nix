@@ -116,6 +116,7 @@
     localsend
     android-tools
     android-udev-rules
+    universal-android-debloater
     niv
     pavucontrol
 
