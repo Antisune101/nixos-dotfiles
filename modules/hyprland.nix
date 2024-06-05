@@ -11,6 +11,7 @@
             "xhost +"
             "nm-applet --indicator"
             "blueman-applet"
+            "rclone --vfs-cache-mode writes mount OneDrive: ~/OneDrive &"
 
         ];
 
