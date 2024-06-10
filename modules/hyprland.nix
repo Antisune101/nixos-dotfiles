@@ -34,7 +34,7 @@
         decoration = {
             # See https://wiki.hyprland.org/Configuring/Variables/ for more
 
-            rounding = 7;
+            rounding = 0;
 
             blur = {
               enabled = true;
@@ -113,6 +113,8 @@
         misc = {
             # See https://wiki.hyprland.org/Configuring/Variables/ for more
             force_default_wallpaper = 0; # Set to 0 to disable the anime mascot wallpapers
+            disable_hyprland_logo = true;
+            disable_splash_rendering = true;
 
             enable_swallow = "true";
             swallow_regex = "^(kitty)$";
