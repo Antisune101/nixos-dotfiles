@@ -119,6 +119,7 @@
     universal-android-debloater
     niv
     pavucontrol
+    rclone
 
   ];
 
