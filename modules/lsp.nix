@@ -5,10 +5,26 @@
     nil
     python312Packages.python-lsp-server
     marksman
-    nodePackages_latest.vscode-css-languageserver-bin
-    nodePackages_latest.vscode-html-languageserver-bin
-    nodePackages_latest.vscode-json-languageserver-bin
     javascript-typescript-langserver
+    nodePackages.typescript-language-server
+    nodejs_20
     taplo
+    # Go
+    go
+    gopls
+    golangci-lint-langserver
+    golangci-lint
+    cargo
+    rustc
+    rust-analyzer
+    rustfmt
+    clippy
+    lldb
+    python3
+    cmake
+    gcc
+    # May be able to remove alsa-utils
+    alsa-utils
+    alsa-lib
   ];
 }

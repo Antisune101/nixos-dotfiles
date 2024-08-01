@@ -20,6 +20,9 @@
   };
 
   home-manager.users.antisune = {
-    stylix.targets.helix.enable = false;
+    stylix.targets = {
+      helix.enable = false;
+      rofi.enable = false;
+    };
   };
 }

@@ -13,7 +13,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
 
   xdg = {
     portal.enable = true;
@@ -57,6 +57,7 @@
   home-manager = {
     extraSpecialArgs = { inherit inputs;  };
     users.antisune = import ./home.nix;
+    backupFileExtension = "backup";
   };
   
   users.users.antisune = {
@@ -95,7 +96,7 @@
     swappy
     networkmanagerapplet
     swww
-    gnome.nautilus
+    nautilus
     usbutils
     udiskie
     udisks
@@ -110,7 +111,7 @@
     mangohud
     protonup
     speedcrunch
-    gnome.gnome-calculator
+    gnome-calculator
     adwsteamgtk
     scrcpy
     localsend
@@ -120,6 +121,15 @@
     niv
     pavucontrol
     rclone
+    audacity
+    ventoy
+    appimage-run
+    bottles
+    wine
+    winetricks
+    dxvk
+    goverlay
+    reaper
 
   ];
 
@@ -139,6 +149,7 @@
     gamemode.enable = true;
 
     adb.enable = true;
+    appimage.enable = true;
 
   };
 
