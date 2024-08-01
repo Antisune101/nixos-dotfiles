@@ -6,7 +6,7 @@ let
   myShellAliases = {
     dots = "cd ~/.config/dotfiles";
     conf = "sudo ${myEditor} ~/.config/dotfiles/configuration.nix";
-    home = "${myEditor} ~/.config/dotfiles/home.nix";
+    home = "${myEditor} ~/.config/dotfiles/home-managerModules/home.nix";
     flake = "${myEditor} ~/.config/dotfiles/flake.nix";
     reshome = "home-manager switch";
     resnix = "sudo nixos-rebuild switch --flake ${dotfileDir}";
@@ -14,10 +14,12 @@ let
 in {
 
   imports = [
-    ./modules/hyprland.nix
-    ./modules/waybar.nix
-    ./modules/rofi.nix
-    ./modules/lf/lf.nix
+    ./hyprland.nix
+    ./waybar.nix
+    ./rofi.nix
+    ./lf.nix
+    ./system-theme.nix
+    ./git.nix
   ];
 
   home.username = "antisune";
@@ -65,10 +67,6 @@ in {
         background_opacity 0.8
       '';
     };
-    bash = {
-      enable = true;
-      shellAliases = myShellAliases;
-    };
 
     zsh =  {
       enable = true;
@@ -88,14 +86,6 @@ in {
       settings.theme = "gruvbox_dark_hard";
     };
 
-    git = {
-      enable = true;
-      userName = "Antisune101";
-      userEmail = "ewanbester72@gmail.com";
-      extraConfig = {
-        init.defaultBranch = "main";
-      };
-    };
 
     bat = {
       enable = true;
@@ -113,36 +103,6 @@ in {
     };
 
   };
-
-
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-    };
-  };
-
-  gtk = {
-    enable = true;
-    # theme = {
-      # name = "Adwaita-dark";
-    #   package = pkgs.gnome.gnome-themes-extra;
-    # };
-    cursorTheme = {
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Classic";
-    };
-    iconTheme = {
-      package = pkgs.papirus-icon-theme;
-      name =  "Papirus";
-    };
-  };
-
-  qt = {
-    enable = true;
-    # platformTheme = "gtk";
-    # style.name = "adwaita-dark";
-  };
-
 
   home.sessionVariables = {
     EDITOR = myEditor;

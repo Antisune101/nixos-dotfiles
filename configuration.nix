@@ -2,10 +2,14 @@
   imports =
     [ 
       ./hardware-configuration.nix
-      ./modules/audio-config.nix
-      ./modules/bluetooth.nix
-      ./modules/lsp.nix
-      ./modules/stylix/stylix.nix
+      ./nixosModules/audio-config.nix
+      ./nixosModules/bluetooth.nix
+      ./nixosModules/system-utils.nix
+      ./nixosModules/stylix.nix
+      ./nixosModules/desktop-apps.nix
+      ./nixosModules/gaming.nix
+      ./nixosModules/programming/programming.nix
+
       inputs.home-manager.nixosModules.default
     ];
 
@@ -47,16 +51,12 @@
       wayland.enable = true;
       autoNumlock = true;
     };
-
-    devmon.enable = true;
-    gvfs.enable = true;
-    udisks2.enable = true;
     
   };
 
   home-manager = {
     extraSpecialArgs = { inherit inputs;  };
-    users.antisune = import ./home.nix;
+    users.antisune = import ./home-managerModules/home.nix;
     backupFileExtension = "backup";
   };
   
@@ -65,72 +65,30 @@
     description = "Ewan Bester";
     extraGroups = [ "networkmanager" "wheel" "adbusers" ];
     shell = pkgs.zsh;
-    packages = with pkgs; [];
   };
 
   nixpkgs.config.allowUnfree = true;
   
   environment.systemPackages = with pkgs; [
-    git
-    helix
-    lf
-    fzf
-    neofetch
-    btop
-    kitty
-    rofi
     swaynotificationcenter
     libnotify
-    wl-clipboard
     xdg-desktop-portal-hyprland
     xdg-utils
     xdg-desktop-portal
     xdg-desktop-portal-gtk
-    polkit_gnome
-    xorg.xhost
-    gparted
-    mpv
-    nsxiv
     grim
     slurp
     swappy
     networkmanagerapplet
     swww
-    nautilus
-    usbutils
-    udiskie
-    udisks
-    brave
-    vesktop
-    godot_4
-    gimp
-    obsidian
-    blender
-    obs-studio
-    libreoffice
-    mangohud
-    protonup
-    speedcrunch
-    gnome-calculator
-    adwsteamgtk
-    scrcpy
-    localsend
-    android-tools
-    android-udev-rules
-    universal-android-debloater
-    niv
     pavucontrol
     rclone
-    audacity
-    ventoy
     appimage-run
     bottles
     wine
     winetricks
     dxvk
     goverlay
-    reaper
-
   ];
 
   programs = {
@@ -141,14 +99,6 @@
       xwayland.enable = true;
     };
 
-    steam = {
-      enable = true;
-      gamescopeSession.enable = true;
-    };
-
-    gamemode.enable = true;
-
-    adb.enable = true;
     appimage.enable = true;
 
   };
@@ -156,7 +106,6 @@
   fonts.packages = with pkgs; [
     nerdfonts
   ];
-
 
   environment.sessionVariables = {
     POLKIT_AUTH_AGENT = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
@@ -167,7 +116,6 @@
     GTK_USE_PORTAL = "1";
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/antisune/.steam/root/compatibilitytools.d";
   };
-
 
   system.autoUpgrade.enable = true;
 
@@ -181,6 +129,4 @@
   };
 
   system.stateVersion = "23.11"; # Did you read the comment?
-
-
 }
