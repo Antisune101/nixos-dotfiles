@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [
-    ./programming-misc.nix
+    ./_programming-misc.nix
     ./go-programming.nix
     ./rust/rust-programming.nix
     ./rust/bevy-dependencies.nix
