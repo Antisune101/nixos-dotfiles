@@ -60,11 +60,14 @@
     backupFileExtension = "backup";
   };
   
-  users.users.antisune = {
-    isNormalUser = true;
-    description = "Ewan Bester";
-    extraGroups = [ "networkmanager" "wheel" "adbusers" ];
-    shell = pkgs.zsh;
+  users = {
+    defaultUserShell = pkgs.zsh;
+    users.antisune = {
+      isNormalUser = true;
+      description = "Ewan Bester";
+      extraGroups = [ "networkmanager" "wheel" "adbusers" ];
+      shell = pkgs.zsh;
+    };
   };
 
   nixpkgs.config.allowUnfree = true;
