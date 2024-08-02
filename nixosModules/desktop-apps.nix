@@ -17,6 +17,6 @@
     blender
     reaper
     audacity
-    
+    zed-editor    
   ];
 }
