@@ -18,5 +18,6 @@
     reaper
     audacity
     zed-editor    
+    musescore
   ];
 }
