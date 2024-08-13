@@ -10,6 +10,7 @@ let
     flake = "${myEditor} ~/.config/dotfiles/flake.nix";
     reshome = "home-manager switch";
     resnix = "sudo nixos-rebuild switch --flake ${dotfileDir}";
+    dev = "nix develop ${dotfileDir}";
   };
 in {
 
