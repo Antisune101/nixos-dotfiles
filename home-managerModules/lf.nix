@@ -1,13 +1,13 @@
 { config, pkgs, ...}:
 {
 
-    xdg.configFile."lf/icons".source = ./icons;
+    xdg.configFile."lf/icons".source = ./lf-icons;
     
     programs.lf = {
-    enable = true;
-    commands = {
-      set-wallpaper = ''%swww img "$f"'';
-      edit = ''$$EDITOR $f'';
+      enable = true;
+      commands = {
+        set-wallpaper = ''%swww img "$f"'';
+        edit = ''$$EDITOR $f'';
     };
 
     settings = {
