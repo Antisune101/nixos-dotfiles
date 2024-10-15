@@ -5,26 +5,18 @@
         stateVersion = "24.05";
     };
     imports = [
+        ./home-manager/stylix.nix
         ./home-manager/hyprland.nix
         ./home-manager/waybar.nix
         ./home-manager/kitty.nix
         ./home-manager/helix.nix
         ./home-manager/btop.nix
         ./home-manager/git.nix
+        ./home-manager/rofi.nix
     ];
 
 
     programs = {
-        rofi = {
-            enable = true;
-            package = pkgs.rofi-wayland;
-            font = lib.mkDefault "JetBrainsMono Nerd Font Mono 24";
-            extraConfig = {
-                show-icons = true;
-                display-drun = "What we runnin?";
-                drun-display-format = "{name}";
-            };
-        };
         home-manager.enable = true;
     };    
 

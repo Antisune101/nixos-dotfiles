@@ -1,4 +1,4 @@
-{ pkgs, inputs, userSettings, lib, ... }:
+{ pkgs, inputs, userSettings, ... }:
 {
   imports = [
     inputs.stylix.nixosModules.stylix
@@ -39,10 +39,5 @@
       terminal = 0.75;
       applications = 0.75;
     };
-
-    targets = {
-      feh.enable = false;
-    };
-
   };
 }
