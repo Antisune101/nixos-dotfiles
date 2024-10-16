@@ -1,9 +1,18 @@
-{ pkgs, ... }:
+{ pkgs, inputs, userSettings, ... }:
+
 {
-    home.packages = with pkgs; [
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+
+  home-manager.users.${userSettings.username} = {
+     home.packages = with pkgs; [
         swww
         waybar
         waypaper
+        swaynotificationcenter
+        hyprshot
     ];
 
     wayland.windowManager.hyprland = {
@@ -12,15 +21,15 @@
             # Startup Apps
             exec-once = [
                 "waybar"
-                "dunst"
                 "swww-daemon"
+                "swaync"
             ];
 
             monitor = ",preferred,auto,auto";
 
             # Programs
             "$terminal" = "kitty";
-            "$fileManager" = "dolphin";
+            "$fileManager" = "nautilus";
             "$menu" = "rofi -show drun";
 
             env = [
@@ -119,11 +128,15 @@
                 "$mainMod, P, pseudo," # dwindle
                 "$mainMod, J, togglesplit," # dwindle
 
-                # Move focus with mainMod + arrow keys
-                "$mainMod, left, movefocus, l"
-                "$mainMod, right, movefocus, r"
-                "$mainMod, up, movefocus, u"
-                "$mainMod, down, movefocus, d"
+                # Screenshot
+                ", PRINT, exec, hyprshot -m window -o ~/Pictures/Screenshots"
+                "shift, PRINT, exec, -m region -o ~/Pictures/Screenshots"
+
+                # Move focus with mainMod + vim keys
+                "$mainMod, h, movefocus, l"
+                "$mainMod, l, movefocus, r"
+                "$mainMod, k, movefocus, u"
+                "$mainMod, j, movefocus, d"
 
                 # Switch workspaces with mainMod + [0-9]
                 "$mainMod, 1, workspace, 1"
@@ -182,4 +195,5 @@
             ];      
         };
     };
+  };
 }

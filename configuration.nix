@@ -2,19 +2,21 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, ... }:
+{ pkgs, inputs, userSettings, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./nixos/stylix.nix
-      ./nixos/graphics.nix
-      ./nixos/gaming.nix
-      ./nixos/audio.nix
-      ./nixos/usb.nix
-      ./nixos/printer.nix
-    ];
+  imports = [
+    inputs.home-manager.nixosModules.home-manager
+    ./hardware-configuration.nix
+    ./nixos/stylix.nix
+    ./nixos/graphics.nix
+    ./nixos/gaming.nix
+    ./nixos/audio.nix
+    ./nixos/usb.nix
+    ./nixos/printer.nix
+    ./nixos/virt-machine.nix
+    ./nixos/hyprland.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -62,6 +64,17 @@
     packages = with pkgs; [];
   };
 
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.${userSettings.username} = import ./home.nix;
+    backupFileExtension = "backup";
+    extraSpecialArgs = {
+      inherit inputs;
+      inherit userSettings;
+    };
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -73,9 +86,9 @@
     waybar
     kitty
     xdg-desktop-portal-hyprland
-    dunst
     swww
     nil
+    mpv
 
 
     
@@ -90,6 +103,7 @@
     libreoffice
     kdenlive
     obsidian
+    bottles
   ];
 
   programs = {
@@ -97,6 +111,7 @@
       enable = true;
       xwayland.enable = true;
     };
+    dconf.enable = true;
   };
 
   fonts.packages = with pkgs; [
