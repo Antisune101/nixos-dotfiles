@@ -15,8 +15,10 @@
     # User Configuration
     userSettings = {
       username = "antisune";
-      gitUsername = "Antisune101";
-      userEmail = "ewanbester72@gmail.com"; # Should probably not put this in public file?
+      git = {
+        username = "Antisune101";
+        email = "ewanbester72@gmail.com"; # Should probably not put this in public file?
+      };
       homeDir = "/home/${userSettings.username}";
       stylixYamlTheme = "classic-dark";
     };
