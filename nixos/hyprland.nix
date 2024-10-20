@@ -1,4 +1,4 @@
-{ pkgs, inputs, userSettings, ... }:
+{ pkgs, userSettings, ... }:
 
 {
   programs.hyprland = {
@@ -11,7 +11,6 @@
         swww
         waybar
         waypaper
-        swaynotificationcenter
         hyprshot
     ];
 
@@ -22,7 +21,6 @@
             exec-once = [
                 "waybar"
                 "swww-daemon"
-                "swaync"
             ];
 
             monitor = ",preferred,auto,auto";
