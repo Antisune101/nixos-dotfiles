@@ -40,4 +40,9 @@
       applications = 0.75;
     };
   };
+
+  home-manager.users.${userSettings.username}.stylix = {
+    enable = true;
+    targets.rofi.enable = false;
+  };
 }

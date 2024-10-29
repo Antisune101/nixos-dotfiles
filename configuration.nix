@@ -1,23 +1,6 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { pkgs, inputs, userSettings, ... }:
 
 {
-  imports = [
-    inputs.home-manager.nixosModules.home-manager
-    ./hardware-configuration.nix
-    ./nixos/stylix.nix
-    ./nixos/graphics.nix
-    ./nixos/gaming.nix
-    ./nixos/audio.nix
-    ./nixos/usb.nix
-    ./nixos/printer.nix
-    ./nixos/virt-machine.nix
-    ./nixos/hyprland.nix
-  ];
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -61,7 +44,6 @@
     isNormalUser = true;
     description = "Ewan Bester";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
   };
 
   home-manager = {
@@ -82,11 +64,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # Core system components
-    polkit_gnome
-    waybar
     kitty
-    xdg-desktop-portal-hyprland
-    swww
     nil
     mpv
 
@@ -104,36 +82,15 @@
     kdenlive
     obsidian
     bottles
+    krita
   ];
 
-  programs = {
-    hyprland = {
-      enable = true;
-      xwayland.enable = true;
-    };
-    dconf.enable = true;
-  };
+  programs.dconf.enable = true;
 
   fonts.packages = with pkgs; [
     nerdfonts
   ];
 
-  security.polkit.enable = true;
-  systemd = {
-    user.services.polkit-gnome-authenication-agent-1 = {
-      description = "polkit-gnome-authentication-agent-1";
-      wantedBy = [ "graphical-session.target" ];
-      wants = [ "graphical-session.target" ];
-      after = [ "graphical-session.target" ];
-      serviceConfig = {
-        Type = "simple";
-        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-        Restart = "on-failure";
-        RestartSec = 1;
-        TimeoutStopSec = 10;
-      };
-    };
-  };
 
 
 

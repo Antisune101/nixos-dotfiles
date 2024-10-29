@@ -26,6 +26,21 @@
     lib = nixpkgs.lib;
     system = "x86_64-linux";
     # pkgs = nixpkgs.legacyPackages.${system};
+    systemModules = [
+      ./configuration.nix
+      ./harware-configuration.nix
+      ./nixos/gaming.nix
+      ./nixos/hyprland.nix
+
+      inputs.home-manager.nixosModules.home-manager
+    ];
+    homeModules = [
+      ./modules/programs/kitty.nix
+      ./modules/programs/helix.nix
+      ./modules/programs/btop.nix
+      ./modules/programs/git.nix
+    ];
+    
   in
   {
     nixosConfigurations.nixos = lib.nixosSystem {
@@ -33,10 +48,9 @@
       specialArgs = {
         inherit inputs;
         inherit userSettings;
+        inherit systemModules;
       };
-      modules = [
-        ./configuration.nix
-      ];
+      modules = systemModules;
     };
   };
 }
