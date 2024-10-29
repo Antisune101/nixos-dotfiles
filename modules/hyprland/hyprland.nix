@@ -26,6 +26,7 @@
     home-manager.users.${userSettings.username} = {
         home.packages = with pkgs; [
             hyprshot
+            swayimg
         ];
 
         wayland.windowManager.hyprland = {
@@ -41,6 +42,7 @@
                 # Programs
                 "$terminal" = "kitty";
                 "$fileManager" = "nautilus";
+                "$windowSwitcher" = "rofi -show window";
                 "$menu" = "rofi -show drun";
 
                 env = [
@@ -49,8 +51,8 @@
                 ];
 
                 general = {
-                    gaps_in = 5;
-                    gaps_out = 20;
+                    gaps_in = 4;
+                    gaps_out = 8;
 
                     border_size = 2;
 
@@ -148,6 +150,11 @@
                     "$mainMod, l, movefocus, r"
                     "$mainMod, k, movefocus, u"
                     "$mainMod, j, movefocus, d"
+
+                    # Alt Tab through windows
+                    "ALT, TAB, cyclenext"
+                    "ALT SHIFT, Tab, cyclenext, prev"
+                    "$mainMod, Tab, exec, $windowSwitcher"
 
                     # Switch workspaces with mainMod + [0-9]
                     "$mainMod, 1, workspace, 1"

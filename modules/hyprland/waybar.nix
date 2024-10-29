@@ -4,6 +4,8 @@
     waybar
   ];
 
+  services.playerctld.enable = true;
+
   home-manager.users.${userSettings.username} = {
     wayland.windowManager.hyprland.settings.exec-once = [
       "waybar"
@@ -25,16 +27,22 @@
           ];
 
           modules-center = [
-            "clock"
+            # "hyprland/window"
           ];
 
           modules-right = [
-            "tray"
+            "mpris"
             "pulseaudio"
+            "tray"
+            "clock"
           ];
+
           "hyprland/window" = {
             format = "{title}";
             icon = true;
+            rewrite = {
+              "(.*) - Brave" = "Brave";
+            };
           };
 
           tray = {
@@ -42,23 +50,15 @@
             spacing = 10;
           };
 
+          mpris = {
+            format = "[ {title} | {artist} ] -> ({status}) ";
+            player = "YoutubeMusic";
+          };
+
           pulseaudio = {
             # // "scroll-step": 1, // %, can be a float
-            format = "{volume}% {icon} {format_source}";
-            format-bluetooth = "{volume}% {icon} {format_source}";
-            format-bluetooth-muted = " {icon} {format_source}";
-            format-muted = " {format_source}";
-            format-source = "{volume}% ";
-            format-source-muted = "";
-            format-icons = {
-                headphone = "";
-                hands-free = "";
-                headset = "";
-                phone = "";
-                portable = "";
-                car = "";
-                default = ["" "" ""];
-            };
+            format = " {volume}% ";
+            format-source = "Mic {volume}%";
               on-click = "pavucontrol";
           };
         };
@@ -67,6 +67,7 @@
         * {
           border-radius: 0;
           font-family: JetBrainsMono Nerd Font Mono;
+          font-size: 16px;
         }
         '';
     }; 

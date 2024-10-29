@@ -5,7 +5,7 @@
     programs.rofi = {
       enable = true;
       package = pkgs.rofi-wayland;
-      font = lib.mkDefault "JetBrains Mono SemiBold 24";
+      font = lib.mkDefault "JetBrains Mono SemiBold 18";
       extraConfig = {
         show-icons = true;
         display-drun = "What we runnin?";

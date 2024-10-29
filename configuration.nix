@@ -75,6 +75,7 @@
     brave
     blender
     godot_4
+    obs-studio
     helix
     nautilus
     bitwarden
@@ -84,6 +85,8 @@
     obsidian
     bottles
     krita
+    youtube-music
+    
   ];
 
   programs.dconf.enable = true;
