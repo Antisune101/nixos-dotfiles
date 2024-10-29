@@ -28,7 +28,7 @@
     # pkgs = nixpkgs.legacyPackages.${system};
     systemModules = [
       ./configuration.nix
-      ./harware-configuration.nix
+      ./hardware-configuration.nix
       ./nixos/gaming.nix
       ./nixos/hyprland.nix
 
