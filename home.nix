@@ -1,10 +1,10 @@
-{ pkgs, userSettings, ... }: {
+{ pkgs, userSettings, homeModules, ... }: {
     home = {
         username = "${userSettings.username}";
         homeDirectory = "${userSettings.homeDir}";
         stateVersion = "24.05";
     };
-    imports = userSettings.homeModules;
+    imports = homeModules;
 
 
     programs = {

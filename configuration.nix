@@ -1,4 +1,4 @@
-{ pkgs, inputs, userSettings, ... }:
+{ pkgs, inputs, userSettings, homeModules, ... }:
 
 {
   # Bootloader.
@@ -54,6 +54,7 @@
     extraSpecialArgs = {
       inherit inputs;
       inherit userSettings;
+      inherit homeModules;
     };
   };
 

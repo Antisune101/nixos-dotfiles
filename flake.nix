@@ -48,7 +48,7 @@
       specialArgs = {
         inherit inputs;
         inherit userSettings;
-        inherit systemModules;
+        inherit homeModules;
       };
       modules = systemModules;
     };
