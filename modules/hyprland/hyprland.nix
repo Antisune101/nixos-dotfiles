@@ -5,7 +5,7 @@
         ../system/printer.nix
         ../system/audio.nix
         ../system/graphics.nix
-        ../stylix.nix
+        ./stylix.nix
         ./polkit.nix
         ./waybar.nix
         ./swaync.nix
