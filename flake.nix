@@ -29,8 +29,8 @@
     systemModules = [
       ./configuration.nix
       ./hardware-configuration.nix
-      ./nixos/gaming.nix
-      ./nixos/hyprland.nix
+      ./modules/gaming.nix
+      ./modules/hyprland/hyprland.nix
 
       inputs.home-manager.nixosModules.home-manager
     ];
