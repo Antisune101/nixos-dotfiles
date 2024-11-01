@@ -143,7 +143,7 @@
 
                     # Screenshot
                     ", PRINT, exec, hyprshot -m window -o ~/Pictures/Screenshots"
-                    "shift, PRINT, exec, -m region -o ~/Pictures/Screenshots"
+                    "shift, PRINT, exec, hyprshot -m region -o ~/Pictures/Screenshots"
 
                     # Move focus with mainMod + vim keys
                     "$mainMod, h, movefocus, l"
