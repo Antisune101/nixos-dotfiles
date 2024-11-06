@@ -85,6 +85,7 @@
     obsidian
     bottles
     krita
+    gimp
     youtube-music
     
   ];
