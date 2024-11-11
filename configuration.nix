@@ -86,6 +86,8 @@
     bottles
     krita
     gimp
+    inkscape
+    musescore
     youtube-music
     
   ];
