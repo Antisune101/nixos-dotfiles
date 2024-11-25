@@ -138,11 +138,13 @@ in
 
                 bind = [
                     # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
+                    "$mainMod, RETURN, exec, $terminal"
                     "$mainMod, Q, exec, $terminal"
                     "$mainMod, C, killactive,"
-                    "$mainMod, M, exit,"
+                    "$mainMod SHIFT, Q, exit,"
                     "$mainMod, E, exec, $fileManager"
                     "$mainMod, V, togglefloating,"
+                    "$mainMod, SPACE, togglefloating"
                     "$mainMod, R, exec, $menu"
                     "$mainMod, P, pseudo," # dwindle
                     "$mainMod, U, togglesplit," # dwindle
