@@ -28,13 +28,13 @@
 
           modules-center = [
             # "hyprland/window"
+            "clock"
           ];
 
           modules-right = [
             "mpris"
             "pulseaudio"
             "tray"
-            "clock"
           ];
 
           "hyprland/window" = {
