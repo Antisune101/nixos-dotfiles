@@ -52,6 +52,8 @@
 
           mpris = {
             format = "[ {title} | {artist} ] -> ({status}) ";
+            title-len = 30;
+            artist-len = 20;
             player = "YoutubeMusic";
           };
 
