@@ -4,6 +4,7 @@
     enable = true;
     settings = {
       confirm_os_window_close = 0;
+      window_margin_width = 2;
     };
   };
 }
