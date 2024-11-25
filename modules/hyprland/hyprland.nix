@@ -72,8 +72,9 @@ in
                     rounding = 0;
 
                     # Change transparency of focused and unfocused windows
-                    active_opacity = 1.0;
-                    inactive_opacity = 1.0;
+                    active_opacity = 0.92;
+                    inactive_opacity = 0.92;
+                    fullscreen_opacity = 1.0;
 
                     shadow = {
                         enabled = true;
