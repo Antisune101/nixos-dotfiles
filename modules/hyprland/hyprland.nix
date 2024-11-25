@@ -142,7 +142,7 @@
                     "$mainMod, V, togglefloating,"
                     "$mainMod, R, exec, $menu"
                     "$mainMod, P, pseudo," # dwindle
-                    "$mainMod, J, togglesplit," # dwindle
+                    "$mainMod, U, togglesplit," # dwindle
                     "$mainMod, F, fullscreen,"
 
                     # Screenshot
