@@ -143,6 +143,7 @@
                     "$mainMod, R, exec, $menu"
                     "$mainMod, P, pseudo," # dwindle
                     "$mainMod, J, togglesplit," # dwindle
+                    "$mainMod, F, fullscreen,"
 
                     # Screenshot
                     ", PRINT, exec, hyprshot -m window -o ~/Pictures/Screenshots"
