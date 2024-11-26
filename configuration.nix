@@ -96,9 +96,12 @@
 
   programs.dconf.enable = true;
 
-  fonts.packages = with pkgs; [
-    nerdfonts
-  ];
+  fonts = {
+    fontDir.enable = true;
+    packages = with pkgs; [
+      nerdfonts
+    ];
+  };
 
 
 
