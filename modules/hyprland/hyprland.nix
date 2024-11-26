@@ -1,5 +1,6 @@
-{ pkgs, userSettings, ... }:
+{ inputs, pkgs, userSettings, ... }:
 let
+    hyprland_pkgs = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
     use_animation = "0";
 in
 {
@@ -18,6 +19,8 @@ in
 
     programs.hyprland = {
         enable = true;
+        package = hyprland_pkgs.hyprland;
+        portalPackage = hyprland_pkgs.xdg-desktop-portal-hyprland;
         xwayland.enable = true;
     };
 

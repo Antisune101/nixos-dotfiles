@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    hyprland.url = "github:hyprwm/Hyprland";
     stylix.url = "github:danth/stylix";
     home-manager = {
       url = "github:nix-community/home-manager";
