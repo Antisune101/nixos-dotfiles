@@ -89,6 +89,8 @@
     inkscape
     musescore
     youtube-music
+
+    vesktop
     
   ];
 
