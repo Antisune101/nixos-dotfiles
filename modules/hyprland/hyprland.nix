@@ -163,6 +163,12 @@ in
                     "$mainMod, k, movefocus, u"
                     "$mainMod, j, movefocus, d"
 
+                    # Move windows with mainMod + Shift + vim keys
+                    "$mainMod SHIFT, h, movewindow, l"
+                    "$mainMod SHIFT, l, movewindow, r"
+                    "$mainMod SHIFT, k, movewindow, u"
+                    "$mainMod SHIFT, j, movewindow, d"
+
                     # Alt Tab through windows
                     "ALT, TAB, cyclenext"
                     "ALT SHIFT, Tab, cyclenext, prev"
@@ -199,6 +205,11 @@ in
                     # Scroll through existing workspaces with mainMod + scroll
                     "$mainMod, mouse_down, workspace, e+1"
                     "$mainMod, mouse_up, workspace, e-1"
+
+                    # Media keys
+                    ", XF86AudioPlay, exec, playerctl play-pause"
+                    ", XF86AudioPrev, exec, playerctl previous"
+                    ", XF86AudioNext, exec, playerctl next"
                 ];
 
                 # Move/resize windows with mainMod + LMB/RMB and dragging
@@ -212,8 +223,6 @@ in
                     ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
                     ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
                     ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-                    ",XF86MonBrightnessUp, exec, brightnessctl s 10%+"
-                    ",XF86MonBrightnessDown, exec, brightnessctl s 10%-"
                 ];
                 windowrulev2 = [
                     "suppressevent maximize, class:.*" # You'll probably like this.
