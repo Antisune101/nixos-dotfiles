@@ -17,7 +17,7 @@
         mainBar = {
           layer = "top";
           position = "top";
-          height = 28;
+          height = 24;
           spacing = 4;
           margin = "0";
 
@@ -62,7 +62,7 @@
             return-type = "json";
             exec-if = "which swaync-client";
             exec = "swaync-client -swb";
-            on-click = "swaync-client -t -sw";
+            on-click = "swaync-client -t";
             on-click-right = "swaync-client -d -sw";
             escape = true;
           };
@@ -92,6 +92,15 @@
           border-radius: 0;
           font-family: JetBrainsMono Nerd Font Mono;
           font-size: 16px;
+        }
+        
+        window#waybar {
+          background: rgba(0.0, 0.0, 0.0, 0.5);  
+        }
+
+        #custom-notification {
+          font-size: 24px;
+          margin: 0px 8px 0px 8px;
         }
         '';
     }; 
