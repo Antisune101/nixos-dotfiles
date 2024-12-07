@@ -231,6 +231,9 @@ in
                     "minsize 360 600, class:(steam), initialTitle:(Friends List)"
                     # Steam settings
                     "float, class:(steam), initialTitle:(Steam Settings)"
+
+                    # Godot
+                    # "tile, initialTitle:(Godot)"
                 ];      
             };
         };
