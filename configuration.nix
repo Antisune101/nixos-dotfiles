@@ -91,10 +91,14 @@
     youtube-music
 
     vesktop
+    scrcpy
     
   ];
 
-  programs.dconf.enable = true;
+  programs = {
+    dconf.enable = true;
+    adb.enable = true;
+  };
 
   fonts = {
     fontDir.enable = true;
