@@ -17,6 +17,7 @@ in
         ./swww.nix
     ];
 
+
     programs.hyprland = {
         enable = true;
         package = hyprland_pkgs.hyprland;
@@ -33,6 +34,7 @@ in
             hyprshot
             swayimg
         ];
+
 
         wayland.windowManager.hyprland = {
             enable = true;
@@ -84,6 +86,7 @@ in
                     # "col.shadow" = "rgba(1a1a1aee)";
 
                     blur = {
+                        xray = false;
                         enabled = true;
                         size = 3;
                         passes = 1;
