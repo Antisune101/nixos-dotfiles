@@ -21,7 +21,7 @@
         email = "ewanbester72@gmail.com"; # Should probably not put this in public file?
       };
       homeDir = "/home/${userSettings.username}";
-      stylixYamlTheme = "classic-dark";
+      stylixYamlTheme = "gruvbox-dark-medium"; # See https://github.com/tinted-theming/schemes?tab=readme-ov-file for list of themes
     };
     # Flake Configuration
     lib = nixpkgs.lib;
