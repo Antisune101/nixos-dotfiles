@@ -92,6 +92,9 @@
 
     vesktop
     scrcpy
+
+    bambu-studio
+    freecad-wayland
     
   ];
 
