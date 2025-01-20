@@ -83,7 +83,6 @@
     libreoffice
     kdenlive
     obsidian
-    bottles
     krita
     gimp
     inkscape
