@@ -88,6 +88,7 @@
     inkscape
     musescore
     youtube-music
+    spotify
 
     vesktop
     scrcpy
