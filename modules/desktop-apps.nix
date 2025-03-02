@@ -9,5 +9,6 @@
     freecad-wayland
     youtube-music
     vesktop
+    musescore
   ];
 }
