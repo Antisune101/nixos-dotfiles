@@ -46,6 +46,7 @@
         ./modules/zsh.nix
         ./modules/firefox.nix
       	./modules/hyprland/hyprland.nix
+        ./modules/hyprland/ly.nix
       	./modules/hyprland/keybinds.nix
         ./modules/hyprland/waybar.nix
         ./modules/hyprland/bemenu.nix
