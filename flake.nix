@@ -9,6 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     textfox.url = "github:adriankarlen/textfox";
+    stylix.url = "github:danth/stylix";
   };
 
   outputs = { self, nixpkgs, ... }@inputs:
@@ -16,6 +17,9 @@
     userSettings = {
       username = "antisune";
       homeDir = "/home/${userSettings.username}";
+      font = {
+        package = pkgs.nerd-fonts.jetbrains-mono;
+      };
       terminal = "kitty";
       hyprland = {
         menu = "bemenu-run";
@@ -39,6 +43,7 @@
       	./modules/audio.nix
       	./modules/amd-graphics.nix
       	./modules/printing.nix
+        ./modules/stylix.nix
         ./modules/usb.nix
       	./modules/steam.nix
       	./modules/desktop-apps.nix
