@@ -39,7 +39,8 @@
             icon = true;
             rewrite = {
               "(.*) - Brave" = "Brave";
-              "(.*) - Mozilla Firefox" = "Firefox";
+              "(.*) — Mozilla Firefox" = "Firefox";
+
             };
           };
 
