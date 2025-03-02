@@ -14,6 +14,11 @@
 
   outputs = { self, nixpkgs, ... }@inputs:
   let
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
+    lib = nixpkgs.lib;
+
+    
     userSettings = {
       username = "antisune";
       homeDir = "/home/${userSettings.username}";
@@ -30,8 +35,6 @@
         email = "ewanbester72@gmail.com";
       };
     };
-    system = "x86_64-linux";
-    lib = nixpkgs.lib;
   in
   {
     nixosConfigurations.nixos = lib.nixosSystem {
