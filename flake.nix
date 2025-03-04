@@ -54,6 +54,7 @@
         ./modules/git.nix
         ./modules/zsh.nix
         ./modules/helix.nix
+        ./modules/yazi.nix
         ./modules/firefox.nix
       	./modules/hyprland/hyprland.nix
         ./modules/hyprland/ly.nix
