@@ -18,15 +18,15 @@
     fonts = {
       serif = {
         package = userSettings.font.package;
-        name = "JetBrainsMono Nerd Font";
+        name = userSettings.font.name;
       };
       sansSerif = {
         package = userSettings.font.package;
-        name = "JetBrainsMono Nerd Font";
+        name = userSettings.font.name;
       };
       monospace = {
         package = userSettings.font.package;
-        name = "JetBrainsMono Nerd Font";
+        name = userSettings.font.name;
       };
       emoji = {
         package = pkgs.noto-fonts-emoji;

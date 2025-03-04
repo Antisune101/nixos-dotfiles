@@ -24,6 +24,7 @@
       homeDir = "/home/${userSettings.username}";
       font = {
         package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "JetBrainsMono Nerd Font";
       };
       terminal = "kitty";
       hyprland = {
