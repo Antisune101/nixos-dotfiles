@@ -10,5 +10,6 @@
     youtube-music
     vesktop
     musescore
+    obs-studio
   ];
 }
