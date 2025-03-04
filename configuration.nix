@@ -46,7 +46,6 @@
     git
     kitty
     vscode
-    helix
     htop
     obsidian
   ];
