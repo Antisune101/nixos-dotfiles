@@ -40,7 +40,7 @@
   {
     nixosConfigurations.nixos = lib.nixosSystem {
       inherit system;
-      specialArgs = { inherit inputs; inherit userSettings; };
+      specialArgs = { inherit inputs; inherit lib; inherit userSettings; };
       modules = [
         ./configuration.nix
       	./hardware-configuration.nix
@@ -53,6 +53,7 @@
       	./modules/desktop-apps.nix
         ./modules/git.nix
         ./modules/zsh.nix
+        ./modules/helix.nix
         ./modules/firefox.nix
       	./modules/hyprland/hyprland.nix
         ./modules/hyprland/ly.nix
