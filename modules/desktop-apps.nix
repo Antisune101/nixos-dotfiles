@@ -2,14 +2,14 @@
 
 {
   environment.systemPackages = with pkgs; [
-    brave
     blender
-    godot_4
-    orca-slicer
+    brave
     freecad-wayland
-    youtube-music
-    vesktop
+    godot_4
     musescore
     obs-studio
+    orca-slicer
+    vesktop
+    youtube-music
   ];
 }
