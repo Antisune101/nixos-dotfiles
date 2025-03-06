@@ -11,6 +11,7 @@
     nautilus
     obs-studio
     orca-slicer
+    prismlauncher
     vesktop
     youtube-music
   ];
