@@ -22,6 +22,12 @@
     userSettings = {
       username = "antisune";
       homeDir = "/home/${userSettings.username}";
+      shell = {
+        aliases = {};
+        sessionVariables = {
+          EDITOR = "hx";
+        };
+      };
       font = {
         package = pkgs.nerd-fonts.jetbrains-mono;
         name = "JetBrainsMono Nerd Font";
