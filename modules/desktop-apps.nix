@@ -7,6 +7,7 @@
     freecad-wayland
     godot_4
     musescore
+    nautilus
     obs-studio
     orca-slicer
     vesktop
