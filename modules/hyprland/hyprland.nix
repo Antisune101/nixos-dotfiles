@@ -13,7 +13,8 @@
 		settings = {
 			monitor = ",preferred,auto,auto";
 			"$terminal" = userSettings.terminal;
-			"$filemanager" = "nautilus";
+			"$terminalFilemanager" = "${userSettings.terminal} yazi";
+			"$guiFilemanager" = "nautilus";
 			"$menu" = userSettings.hyprland.menu;
 
 			env = [
