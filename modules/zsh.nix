@@ -10,6 +10,16 @@
 
   home-manager.users.${userSettings.username}.programs.zsh = {
     enable = true;
+    dotDir = ".config/zsh";
+    history.path = "./cache/zsh/history";
+    autosuggestion = {
+      enable = true;
+    };
+    syntaxHighlighting.enable = true;
+    enableCompletion = true;
+    sessionVariables = userSettings.shell.sessionVariables;
+    shellAliases = userSettings.shell.aliases;
+    
     initExtra = ''
       PROMPT="%F{red}[%f%B%F{yellow}%n%f%b%B%F{green}@%f%b%B%F{blue}%m%f%b %~%F{9}]%f$ "
 
@@ -24,12 +34,5 @@
       bindkey -M menuselect 'l' vi-forward-char
       bindkey -M menuselect 'j' vi-down-line-or-history
     '';
-    dotDir = ".config/zsh";
-    history.path = "./cache/zsh/history";
-    autosuggestion = {
-      enable = true;
-    };
-    syntaxHighlighting.enable = true;
-    enableCompletion = true;
   };
 }
