@@ -28,6 +28,7 @@
           EDITOR = "hx";
         };
       };
+      base16Theme = "${pkgs.base16-schemes}/share/themes/classic-dark.yaml";
       font = {
         package = pkgs.nerd-fonts.jetbrains-mono;
         name = "JetBrainsMono Nerd Font";
