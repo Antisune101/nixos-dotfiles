@@ -11,7 +11,7 @@
   home-manager.users.${userSettings.username}.programs.zsh = {
     enable = true;
     dotDir = ".config/zsh";
-    history.path = "./cache/zsh/history";
+    history.path = ".cache/zsh/history";
     autosuggestion = {
       enable = true;
     };
