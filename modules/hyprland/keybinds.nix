@@ -72,7 +72,8 @@
 			"$mainMod, mouse_up, workspace, e-1"
 
 			# Media keys
-			", XF86AudioPlay, exec, playerctl play-pause"
+			", XF86AudioPlay, exec, playerctl --player=YoutubeMusic play-pause"
+			", XF86AudioStop, exec, playerctl --player=firefox play-pause"
 			", XF86AudioPrev, exec, playerctl previous"
 			", XF86AudioNext, exec, playerctl next"
 		];
