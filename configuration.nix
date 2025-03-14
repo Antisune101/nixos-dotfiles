@@ -45,7 +45,6 @@
     neovim
     git
     kitty
-    vscode
     htop
     obsidian
   ];
