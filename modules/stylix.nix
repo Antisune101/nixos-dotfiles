@@ -1,4 +1,4 @@
-{ pkgs, inputs, userSettings, ... }:
+{ pkgs, inputs, userSettings, lib, ... }:
 
 {
   imports = [
@@ -7,12 +7,13 @@
 
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/classic-dark.yaml";
+    base16Scheme = userSettings.base16Theme;
     polarity = "dark";
 
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Ice";
+      size = 16;
     };
 
     fonts = {
@@ -32,6 +33,21 @@
         package = pkgs.noto-fonts-emoji;
         name = "Noto Color Emoji";
       };
+    };
+  };
+
+  home-manager.users.${userSettings.username} = {
+    stylix = {
+      enable = true;
+
+      iconTheme = {
+          enable = true;
+          package = pkgs.papirus-icon-theme;
+          light = "Papirus Light";
+          dark = "Papirus Dark";
+      };
+
+      targets.firefox.profileNames = [ "default" ];
     };
   };
 }
