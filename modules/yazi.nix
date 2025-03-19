@@ -28,6 +28,14 @@ in {
       ];
     };
 
+    keymap = {
+      manager.prepend_keymap = [
+        {
+          # TODO: Make these env variables
+          run = "shell 'swww img -t=none \"\$0\"'";
+          on = "<C-w>";
+        }
+      ];
     };
 
     plugins = {
