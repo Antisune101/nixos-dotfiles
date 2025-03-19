@@ -1,4 +1,4 @@
-{ pkgs, inputs, userSettings, lib, ... }:
+{ pkgs, inputs, userSettings, ... }:
 
 {
   imports = [
@@ -7,13 +7,13 @@
 
   stylix = {
     enable = true;
-    base16Scheme = userSettings.base16Theme;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
     polarity = "dark";
 
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Ice";
-      size = 16;
+      size = userSettings.cursorSize;
     };
 
     fonts = {
@@ -36,18 +36,12 @@
     };
   };
 
-  home-manager.users.${userSettings.username} = {
-    stylix = {
+  home-manager.users.${userSettings.username}.stylix = {
+    iconTheme = {
       enable = true;
-
-      iconTheme = {
-          enable = true;
-          package = pkgs.papirus-icon-theme;
-          light = "Papirus Light";
-          dark = "Papirus Dark";
-      };
-
-      targets.firefox.profileNames = [ "default" ];
+      package = pkgs.papirus-icon-theme;
+      light = "Papirus-Light";
+      dark = "Papirus-Dark";
     };
   };
 }
