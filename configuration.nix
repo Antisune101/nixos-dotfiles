@@ -1,11 +1,16 @@
-{ config, pkgs, inputs, userSettings, ... }:
+{ config, pkgs, ... }:
+
 {
+  imports =
+    [ # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+    ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
 
   # Enable networking
@@ -15,69 +20,47 @@
   time.timeZone = "Africa/Johannesburg";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_ZA.UTF-8";
+  i18n.defaultLocale = "en_US.UTF-8";
+
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "en_US.UTF-8";
+    LC_IDENTIFICATION = "en_US.UTF-8";
+    LC_MEASUREMENT = "en_US.UTF-8";
+    LC_MONETARY = "en_US.UTF-8";
+    LC_NAME = "en_US.UTF-8";
+    LC_NUMERIC = "en_US.UTF-8";
+    LC_PAPER = "en_US.UTF-8";
+    LC_TELEPHONE = "en_US.UTF-8";
+    LC_TIME = "en_US.UTF-8";
+  };
 
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "za";
+    layout = "us";
     variant = "";
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.antisune = {
+  users.users.ewanbester = {
     isNormalUser = true;
     description = "Ewan Bester";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
   };
 
-	home-manager = {
-		    useGlobalPkgs = true;
-		    useUserPackages = true;
-		    extraSpecialArgs = { inherit inputs; inherit userSettings; };
-		    backupFileExtension = "backup";
-		    users.${userSettings.username} = import ./home.nix;
-	};
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [
-    neovim
-    git
-    kitty
-    htop
-    obsidian
   ];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+  # Configure Programs:
 
   # List services that you want to enable:
 
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  nix.settings.experimental-features = [ "flakes" "nix-command" ];
 
-  nix = {
-    optimise.automatic = true;
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 30d";
-    };
-    settings.experimental-features = [ "nix-command" "flakes" ];
-  };
-
-  system.stateVersion = "24.05"; # Did you read the comment?
-
+  system.stateVersion = "24.11"; # Did you read the comment? Yes I did :)
 }
