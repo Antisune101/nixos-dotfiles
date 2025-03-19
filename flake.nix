@@ -3,12 +3,11 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    hyprland.url = "github:hyprwm/Hyprland";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    textfox.url = "github:adriankarlen/textfox";
+    hyprland.url = "github:hyprwm/Hyprland";
     stylix.url = "github:danth/stylix";
   };
 
@@ -17,59 +16,70 @@
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
     lib = nixpkgs.lib;
-
-    
     userSettings = {
-      username = "antisune";
+      username = "ewanbester";
       homeDir = "/home/${userSettings.username}";
+
+      # Shell settings
       shell = {
-        aliases = {};
         sessionVariables = {
           EDITOR = "hx";
         };
+        aliases = {
+          
+        };
       };
-      base16Theme = "${pkgs.base16-schemes}/share/themes/classic-dark.yaml";
+
+      # Git Settings
+      git = {
+        username = "Antisune101";
+        email = "ewanbseter72@gmail.com";
+      };
+
+      # Appearance settings
+      cursorSize = 24;
       font = {
         package = pkgs.nerd-fonts.jetbrains-mono;
         name = "JetBrainsMono Nerd Font";
       };
-      terminal = "kitty";
-      hyprland = {
-        menu = "bemenu-run";
-        bar_height = 24;
-      };
-      git = {
-        username = "Antisune101";
-        email = "ewanbester72@gmail.com";
-      };
     };
-  in
-  {
+    
+  in {
     nixosConfigurations.nixos = lib.nixosSystem {
       inherit system;
-      specialArgs = { inherit inputs; inherit lib; inherit userSettings; };
+      specialArgs = { inherit inputs; inherit userSettings; };
       modules = [
         ./configuration.nix
-      	./hardware-configuration.nix
-      	./modules/audio.nix
-      	./modules/amd-graphics.nix
-      	./modules/printing.nix
-        ./modules/stylix.nix
-        ./modules/usb.nix
-      	./modules/steam.nix
-      	./modules/desktop-apps.nix
+        ./modules/amd-graphics.nix
+        ./modules/audio.nix
+        ./modules/btop.nix
+        ./modules/desktop-apps.nix
         ./modules/git.nix
-        ./modules/zsh.nix
         ./modules/helix.nix
+        ./modules/kitty.nix
+        ./modules/ly.nix
+        ./modules/printing.nix
+        ./modules/steam.nix
+        ./modules/stylix.nix
+        ./modules/system-utils.nix
+        ./modules/usb.nix
         ./modules/yazi.nix
-        ./modules/firefox.nix
-      	./modules/hyprland/hyprland.nix
-        ./modules/hyprland/ly.nix
-      	./modules/hyprland/keybinds.nix
+        ./modules/zsh.nix
+        ./modules/hyprland/hyprland.nix
+        ./modules/hyprland/keybinds.nix
+        ./modules/hyprland/windowrules.nix
         ./modules/hyprland/waybar.nix
-        ./modules/hyprland/bemenu.nix
+        ./modules/hyprland/rofi.nix
 
-	inputs.home-manager.nixosModules.home-manager
+        inputs.home-manager.nixosModules.home-manager {
+          home-manager = {
+            extraSpecialArgs = { inherit inputs; inherit userSettings; };
+            backupFileExtension = "bakcup";
+            # useGlobalPkgs = true;
+            useUserPackages = true;
+            users.${userSettings.username} = import ./home.nix;
+          };
+        }
       ];
     };
   };
