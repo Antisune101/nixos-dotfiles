@@ -1,63 +1,57 @@
-{pkgs, userSettings, ... }:
+{ pkgs, userSettings, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    waybar
-  ];
+  home-manager.users.${userSettings.username}.programs.waybar = {
+    enable = true;
+    settings = {
+      mainBar = {
+        layer = "top";
+        position = "top";
+        height = 36;
+        spacing = 4;
 
-  services.playerctld.enable = true;
+        modules-left = [
+          "hyprland/workspaces"
+          "hyprland/window"
+        ];
 
-  home-manager.users.${userSettings.username} = {
-    wayland.windowManager.hyprland.settings.exec-once = [
-      "waybar"
-    ];
+        modules-center = [
+          "clock"
+        ];
 
-    programs.waybar = {
-      enable = true;
-      settings = {
-        mainBar = {
-          layer = "top";
-          position = "top";
-          height = userSettings.hyprland.bar_height;
+        modules-right = [
+          "mpris"
+          "pulseaudio"
+          "tray"
+        ];
+
+        "hyprland/window" = {
+          format = "{title}";
+          icon = true;
+          rewrite = {
+            "(.*) - Brave" = "Brave Browser";
+            "(.*) — Ablaze Floorp" = "Oddly named Firefox";
+            "(.*) — Mozilla Firefox" = "Firefox";
+          };
+        };
+
+        mpris ={
+          format = "[ {title} | {artist} ] -> ({status})";
+          title-len = 30;
+          artist-len = 20;
+          player = "YoutubeMusic";
+        };
+
+        pulseaudio = {
+          scroll-step = 2;
+          max-volume = 100;
+          format = "Audio {volume}%";
+          format-source = "Mic {volume}%";
+          on-click = "pavucontrol";
+        };
+
+        tray = {
           spacing = 4;
-          margin = "0";
-
-          modules-left = [
-            "hyprland/workspaces"
-            "hyprland/window"
-          ];
-
-          modules-right = [
-            "mpris"
-            "pulseaudio"
-            "tray"
-            "clock"
-          ];
-
-          "hyprland/window" = {
-            format = "{title}";
-            icon = true;
-            rewrite = {
-              "(.*) - Brave" = "Brave";
-              "(.*) — Mozilla Firefox" = "Firefox";
-
-            };
-          };
-
-          mpris = {
-            format = "[ {title} | {artist} ] -> ({status})";
-            title-len = 30;
-            artist-len = 20;
-            player = "YoutubeMusic";
-          };
-
-          pulseaudio = {
-            scroll-step = 2;
-            max-volume = 100;
-            format = "Audio {volume}%";
-            format-source = "Mic {volume}%";
-            on-click = "pavucontrol";
-          };
         };
       };
     };
