@@ -2,17 +2,14 @@
 
 {
   environment.systemPackages = with pkgs; [
-    blender
-    brave
-    freecad-wayland
-    godot_4
+    floorp
+    freecad
+    gimp
+    krita
     musescore
-    mpv
-    nautilus
-    obs-studio
+    obsidian
     orca-slicer
-    prismlauncher
     vesktop
     youtube-music
-  ];
+  ];  
 }
