@@ -1,16 +1,8 @@
-{ pkgs, userSettings, inputs, ... }: {
-    home = {
-        username = "${userSettings.username}";
-        homeDirectory = "${userSettings.homeDir}";
-        stateVersion = "24.05";
-    };
+{ userSettings, pkgs, ... }:
 
-    programs = {
-        home-manager.enable = true;
-    };    
+{
+  home.username = userSettings.username;
+  home.homeDirectory = userSettings.homeDir;
 
-#    gtk.iconTheme = {
-#        package = pkgs.papirus-icon-theme;
-#        name = "Papirus";
-#    };
+  home.stateVersion = "24.11";
 }
