@@ -19,19 +19,34 @@
       "$mainMod, PRINT, exec, $screenshotWindow"
       "$mainMod SHIFT, PRINT, exec, $screenshotArea"
 
+      # =========== WINDOWS ==========
+      # Cylce between and swap windows with J,K
+      "$mainMod, J, layoutmsg, cyclenext"
+      "$mainMod, K, layoutmsg, cycleprev"
+      "$mainMod SHIFT, J, layoutmsg, swapnext"
+      "$mainMod SHIFT, K, layoutmsg, swapprev"
+      "$mainMod SHIFT, H, layoutmsg, swapwithmaster"
+
+      # Expand and shrink split with H, L
+      "$mainMod, H, layoutmsg, mfact -0.02"
+      "$mainMod, L, layoutmsg, mfact +0.02"
+
+      "$mainMod, TAB, layoutmsg, orientationnext"
+      "$mainMod SHIFT, TAB, layoutmsg, orientationprev"
       
       # Move focus with mainMod + vim keys 
-      "$mainMod, h, movefocus, l"
-      "$mainMod, l, movefocus, r"
-      "$mainMod, k, movefocus, u"
-      "$mainMod, j, movefocus, d"
+      # "$mainMod, h, movefocus, l"
+      # "$mainMod, l, movefocus, r"
+      # "$mainMod, k, movefocus, u"
+      # "$mainMod, j, movefocus, d"
 
       # Move windows with mainMod Shift + vim keys
-      "$mainMod SHIFT, h, movewindow, l"
-      "$mainMod SHIFT, l, movewindow, r"
-      "$mainMod SHIFT, k, movewindow, u"
-      "$mainMod SHIFT, j, movewindow, d"
+      # "$mainMod SHIFT, h, movewindow, l"
+      # "$mainMod SHIFT, l, movewindow, r"
+      # "$mainMod SHIFT, k, movewindow, u"
+      # "$mainMod SHIFT, j, movewindow, d"
 
+      # ========== WORKSPACES ==========
       # Switch workspaces with mainMod + [0-9]
       "$mainMod, 1, workspace, 1"
       "$mainMod, 2, workspace, 2"

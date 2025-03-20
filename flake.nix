@@ -26,7 +26,7 @@
           EDITOR = "hx";
         };
         aliases = {
-          
+          rebuild = "sudo nixos-rebuild switch --flake ${userSettings.homeDir}/.config/dotfiles";
         };
       };
 

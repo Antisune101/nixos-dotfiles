@@ -88,7 +88,7 @@
       
       master = {
         new_status = "master";
-        mfact = 0.60;
+        mfact = 0.55;
       };
 
       misc = {
