@@ -1,6 +1,7 @@
 { pkgs, lib, userSettings, ... }:
 
 {
+  environment.systemPackages = with pkgs; [ nil nixd ];
   home-manager.users.${userSettings.username}.programs.helix = {
     enable = true;
     settings = {
