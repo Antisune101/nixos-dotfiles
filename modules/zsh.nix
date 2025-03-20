@@ -14,6 +14,7 @@
     history.path = "/home/${userSettings.username}/.cache/zsh/history";
     autosuggestion = {
       enable = true;
+      strategy = [ "completion" "history" ];
     };
     syntaxHighlighting.enable = true;
     enableCompletion = true;
@@ -33,6 +34,9 @@
       bindkey -M menuselect 'k' vi-up-line-or-history
       bindkey -M menuselect 'l' vi-forward-char
       bindkey -M menuselect 'j' vi-down-line-or-history
+
+      bindkey '^I' complete-word 
+      bindkey '^[[Z' autosuggest-accept
     '';
   };
 }
