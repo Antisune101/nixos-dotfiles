@@ -2,9 +2,9 @@
 let 
   stylixColors = config.lib.stylix.colors;
   colors = {
-    main = "#${stylixColors.base00}";
-    red = "#${stylixColors.base01}";
-    orange = "#${stylixColors.base05}";
+    main = "#${stylixColors.base05}";
+    red = "#${stylixColors.base08}";
+    orange = "#${stylixColors.base09}";
     yellow = "#${stylixColors.base0A}";
     green = "#${stylixColors.base0B}";
     cyan = "#${stylixColors.base0C}";
