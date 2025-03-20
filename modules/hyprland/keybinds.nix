@@ -75,15 +75,23 @@
       # Music
       "$mainMod, S, togglespecialworkspace, music"
       "$mainMod SHIFT, S, movetoworkspace, special:music"
-      # Task Manager
-      "$mainMod, T, togglespecialworkspace, taskmanager"
-      "$mainMod SHIFT, T, movetoworkspace, special:taskmanager"
+      # Discord
+      "$mainMod, V, togglespecialworkspace, discord"
+      "$mainMod SHIFT, V, movetoworkspace, special:discord"
 
-      # Media keys
+      # ========== MEDIA KEYS 
+      # Play/Puase and Skip/Prev
       ", XF86AudioPlay, exec, playerctl --player=YoutubeMusic play-pause"
       ", XF86AudioStop, exec, playerctl --player=firefox play-pause"
       ", XF86AudioNext, exec, playerctl --player=YoutubeMusic next"
       ", XF86AudioPrev, exec, playerctl --player=YoutubeMusic previous"
+    ];
+
+    binde = [
+        # Volume and Mic
+        ",XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1"
+        ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        ",PAUSE, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
     ];
 
     bindm = [
