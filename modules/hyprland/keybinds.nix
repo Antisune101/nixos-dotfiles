@@ -10,6 +10,7 @@
       "$mainMod, C, killactive"
       "$mainMod SHIFT, Q, exit"
       "$mainMod, W, exec, $changeWallpaper"
+      "$mainMod, F, fullscreen"
       # Launch file manager
       # mainMod + E for tui, mainMod SHIFT E for gui
       "$mainMod, E, exec, $tuiFileManager"
