@@ -6,6 +6,7 @@
     freecad
     gimp
     krita
+    libreoffice
     musescore
     obsidian
     orca-slicer
