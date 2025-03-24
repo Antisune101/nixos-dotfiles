@@ -9,6 +9,7 @@
     libreoffice
     musescore
     obsidian
+    obs-studio
     orca-slicer
     vesktop
     youtube-music
