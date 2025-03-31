@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+    firefox
     floorp
     freecad
     gimp
