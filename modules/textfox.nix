@@ -3,7 +3,11 @@
 {
   home-manager.users.${userSettings.username} = {
     imports = [ inputs.textfox.homeManagerModules.default ];
-    enable = true;
-    profile = "textfoxTest";
+    stylix.targets.firefox.profileNames = [ "textfoxTest" ];
+    textfox = {
+      enable = true;
+      profile = "textfoxTest";
+      useLegacyExtensions = false;
+    };
   };
 }
