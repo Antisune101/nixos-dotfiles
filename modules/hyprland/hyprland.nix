@@ -1,4 +1,4 @@
-{ pkgs, userSettings, inputs, ... }: {
+{ pkgs, lib, userSettings, inputs, ... }: {
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -35,7 +35,7 @@
         gaps_in = 5;
         gaps_out = 10;
         border_size = 2;
-        resize_on_border = false;
+        resize_on_border = true;
         allow_tearing = false;
         layout = "master";
       };
