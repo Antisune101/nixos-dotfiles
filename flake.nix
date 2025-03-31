@@ -48,7 +48,7 @@
   in {
     nixosConfigurations.nixos = lib.nixosSystem {
       inherit system;
-      specialArgs = { inherit inputs; inherit userSettings; };
+      specialArgs = { inherit inputs; inherit userSettings; inherit lib; };
       modules = [
         ./configuration.nix
         ./modules/amd-graphics.nix
