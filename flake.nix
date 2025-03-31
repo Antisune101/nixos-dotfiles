@@ -9,6 +9,7 @@
     };
     hyprland.url = "github:hyprwm/Hyprland";
     stylix.url = "github:danth/stylix";
+    textfox.url = "github:adriankarlen/textfox";
   };
 
   outputs = { self, nixpkgs, ... }@inputs:
@@ -62,6 +63,7 @@
         ./modules/steam.nix
         ./modules/stylix.nix
         ./modules/system-utils.nix
+        ./modules/textfox.nix
         ./modules/usb.nix
         ./modules/yazi.nix
         ./modules/zsh.nix
