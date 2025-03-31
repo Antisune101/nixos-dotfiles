@@ -6,6 +6,7 @@
     floorp
     freecad
     gimp
+    godot_4
     krita
     libreoffice
     musescore
