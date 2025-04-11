@@ -9,6 +9,7 @@
     freecad
     gimp
     godot_4
+    kdePackages.kdenlive
     krita
     libreoffice
     musescore
