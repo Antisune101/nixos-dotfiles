@@ -77,6 +77,7 @@
         ./modules/hyprland/rofi.nix
         ./modules/programming/go.nix
         ./modules/programming/rust.nix
+        ./modules/programming/webdev.nix
 
         inputs.home-manager.nixosModules.home-manager {
           home-manager = {
