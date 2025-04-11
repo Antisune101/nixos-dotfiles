@@ -59,10 +59,12 @@
         ./modules/btop.nix
         ./modules/desktop-apps.nix
         ./modules/git.nix
+        ./modules/go.nix
         ./modules/helix.nix
         ./modules/kitty.nix
         ./modules/ly.nix
         ./modules/printing.nix
+        ./modules/rust.nix
         ./modules/steam.nix
         ./modules/stylix.nix
         ./modules/system-utils.nix
