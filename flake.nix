@@ -27,6 +27,7 @@
           EDITOR = "hx";
         };
         aliases = {
+          # Nix
           rebuild = "sudo nixos-rebuild switch --flake ${userSettings.homeDir}/.config/dotfiles";
           # Git
           glo = "git log --oneline";
