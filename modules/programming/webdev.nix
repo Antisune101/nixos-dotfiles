@@ -1,7 +1,8 @@
 { pkgs, userSettings, ... }:
 {
   environment.systemPackages = with pkgs; [
-    vscode-langservers-extracted
+    superhtml
     typescript-language-server
+    vscode-langservers-extracted
   ];
 }
