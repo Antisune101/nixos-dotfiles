@@ -21,7 +21,7 @@
     sessionVariables = userSettings.shell.sessionVariables;
     shellAliases = userSettings.shell.aliases;
     
-    initExtra = ''
+    initContent = ''
       PROMPT="%F{red}[%f%B%F{yellow}%n%f%b%B%F{green}@%f%b%B%F{blue}%m%f%b %~%F{9}]%f$ "
 
       zstyle ':completion:*' menu select
