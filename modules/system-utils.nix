@@ -5,6 +5,7 @@
     hyprshot
     mpv
     nautilus
+    gnome-text-editor
     networkmanagerapplet
     playerctl
     swww
