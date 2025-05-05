@@ -14,18 +14,18 @@ in {
     settings = {
       sort_by = "alphabetical";
       sory_dir_first = true;
-      plugin.prepend_fetchers = [
-        {
-          id = "git";
-          name = "*";
-          run = "git";
-        }
-        {
-          id = "git";
-          name = "*/";
-          run = "git";
-        }
-      ];
+      # plugin.prepend_fetchers = [
+      #   {
+      #     id = "git";
+      #     name = "*";
+      #     run = "git";
+      #   }
+      #   {
+      #     id = "git";
+      #     name = "*/";
+      #     run = "git";
+      #   }
+      # ];
     };
 
     keymap = {
@@ -40,13 +40,13 @@ in {
 
     plugins = {
       full-border = "${yazi-plugins}/full-border.yazi";
-      git = "${yazi-plugins}/git.yazi";
+      # git = "${yazi-plugins}/git.yazi";
     };
 
     initLua = ''
       require("full-border"):setup()
-      require("git"):setup()
     '';
+    # require("git"):setup()
 
   };
 }
