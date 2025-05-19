@@ -18,6 +18,7 @@
     obs-studio
     orca-slicer
     vesktop
+    vscode
     youtube-music
   ];  
 }
