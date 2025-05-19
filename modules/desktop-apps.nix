@@ -20,5 +20,6 @@
     vesktop
     vscode
     youtube-music
+    zed-editor
   ];  
 }
