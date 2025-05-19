@@ -54,6 +54,7 @@
       specialArgs = { inherit inputs; inherit userSettings; inherit lib; };
       modules = [
         ./configuration.nix
+        ./modules/adb.nix
         ./modules/amd-graphics.nix
         ./modules/audio.nix
         ./modules/btop.nix
