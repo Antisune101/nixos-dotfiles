@@ -2,7 +2,10 @@
 let 
   stylixColors = config.lib.stylix.colors;
   colors = {
+    background = "#${stylixColors.base00}";
+    alt_background = "#${stylixColors.base01}";
     main = "#${stylixColors.base05}";
+    alt_main = "#${stylixColors.base04}";
     red = "#${stylixColors.base08}";
     orange = "#${stylixColors.base09}";
     yellow = "#${stylixColors.base0A}";
@@ -19,8 +22,8 @@ in {
       mainBar = {
         layer = "top";
         position = "top";
-        height = 36;
-        spacing = 4;
+        height = 42;
+        spacing = 6;
 
         modules-left = [
           "hyprland/workspaces"
@@ -32,10 +35,18 @@ in {
 
         modules-right = [
           "mpris"
+          # "cava"
           "pulseaudio"
           "clock"
           "tray"
         ];
+
+        "hyprland/workspaces" = {
+          show-special = true;
+          persistent-workspaces = {
+            "*" = 5;
+          };
+        };
 
         "hyprland/window" = {
           format = "{title}";
@@ -47,11 +58,29 @@ in {
           };
         };
 
-        mpris ={
-          format = "[ {title} - {artist} ] -> {status}";
+        cava = {
+          framerate = 120;
+          autosens = 1;
+          bars = 12;
+          method = "pipewire";
+          source = "pipewire-0:Chromium";
+          bar_delimiter = 0;
+          input_delay = 2;
+          sleep_timer = 2;
+          hide_on_silence = false;
+          format-icons = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
+        };
+
+        mpris = {
+          format-playing = "[ {title} - {artist} ][{status}]";
+          format-paused = "[ {title} - {artist} ][{status} ]";
           title-len = 30;
           artist-len = 20;
           player = "YoutubeMusic";
+          status-icons = {
+            "paused" = "▶";
+            "playing" = "⏸";
+          };
         };
 
         pulseaudio = {
@@ -92,17 +121,69 @@ in {
         font-family: ${userSettings.font.name};
       }
 
-      #clock {
-        color: ${colors.yellow};
+
+      window#waybar {
+        background-color: transparent;
+        padding: 5px 10px;
+      }
+
+      #clock, #pulseaudio, #mpris, #tray {
+        padding: 5px;
+        margin: 5px;
+      }
+
+      #workspaces {
+        color: ${colors.main};
+        background-color: ${colors.alt_background};
+        box-shadow: -5px 5px ${colors.background};
+        margin: 5px;
+        margin-left: 10px;
+        border: none;
+      }
+
+      #workspaces button {
+        padding: 5px;
+        border: none;
+      }
+
+      #workspaces button.empty {
+        color: ${colors.alt_main};
+      }
+
+      #workspaces button.active, #workspaces button.focused {
+        color: ${colors.background};
+        background-color: ${colors.yellow};
+      }
+
+
+
+      #mpris {
+        color: ${colors.background};
+        background-color: ${colors.cyan};
+        box-shadow: 5px 5px ${colors.blue};
       }
 
       #pulseaudio {
-        color: ${colors.red};
+        color: ${colors.background};
+        background-color: ${colors.red};
+        box-shadow: 5px 5px ${colors.brown};
+        
       }
 
-      #mpris {
-        color: ${colors.blue};
+      #clock {
+        color: ${colors.background};
+        background-color: ${colors.yellow};
+        box-shadow: 5px 5px ${colors.orange};
+        
       }
+
+      #tray {
+        color: ${colors.main};
+        background-color: ${colors.alt_background};
+        box-shadow: 5px 5px ${colors.background};
+        margin-right: 10px;
+      }
+
     '';
   };
 }

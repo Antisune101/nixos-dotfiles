@@ -43,5 +43,6 @@
       light = "Papirus-Light";
       dark = "Papirus-Dark";
     };
+    targets.waybar.enable = false;
   };
 }
