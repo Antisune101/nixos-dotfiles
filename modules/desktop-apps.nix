@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     blender
     brave
+    cava
     chromium
     firefox
     floorp
