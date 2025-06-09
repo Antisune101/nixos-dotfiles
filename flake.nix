@@ -37,7 +37,7 @@
       # Git Settings
       git = {
         username = "Antisune101";
-        email = "ewanbseter72@gmail.com";
+        email = "ewanbester72@gmail.com";
       };
 
       # Appearance settings
