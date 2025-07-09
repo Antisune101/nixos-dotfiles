@@ -17,11 +17,15 @@
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
     lib = nixpkgs.lib;
+
+    userSettings = {
+      username = "antisune";
+    };
   in
   {
     nixosConfigurations = {
       desktop = lib.nixosSystem {
-        specialArgs = { inherit inputs; inherit system; };
+        specialArgs = { inherit inputs; inherit system; inherit userSettings; };
         modules = [
           ./hosts/desktop/configuration.nix
           ./nixosModules
