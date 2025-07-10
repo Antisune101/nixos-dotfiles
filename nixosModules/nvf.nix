@@ -15,6 +15,7 @@
       settings = {
         vim = {
           lineNumberMode = "relative";
+          options.shiftwidth = 4;
         };
       };
     };
