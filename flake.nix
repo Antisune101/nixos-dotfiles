@@ -33,7 +33,7 @@
       };
 
       surface = lib.nixosSystem {
-        specialArgs = {inherit inputs; inherit system; };
+        specialArgs = {inherit inputs; inherit system; inherit userSettings; };
         modules = [
           ./hosts/surface/configuration.nix
           ./nixosModules
