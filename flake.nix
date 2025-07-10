@@ -39,6 +39,9 @@
           ./nixosModules
         ];
       };
+
     };
+
+    homeManagerModules.default = ./homeManagerModules;
   };
 }

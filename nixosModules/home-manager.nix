@@ -10,6 +10,10 @@
       extraSpecialArgs = { inherit inputs; inherit userSettings; };
       backupFileExtension = "backup";
       users.${userSettings.username} = {
+        imports = [
+          inputs.self.outputs.homeManagerModules.default
+        ];
+
         home.username = userSettings.username;
         home.homeDirectory = "/home/${userSettings.username}";
         home.stateVersion = "25.05";
