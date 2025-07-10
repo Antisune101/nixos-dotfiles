@@ -15,10 +15,10 @@
       settings = {
         vim = {
           lineNumberMode = "relative";
+          languages.enableTreesitter = true;
           options.shiftwidth = 4;
         };
       };
     };
   };
-
 }
