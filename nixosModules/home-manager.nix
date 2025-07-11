@@ -1,4 +1,7 @@
-{ config, lib, inputs, userSettings, ... }: {
+{ config, lib, inputs, userSettings, ... }:
+let
+    globalConfig = config;
+in {
   options = {
     homeManager.enable = lib.mkEnableOption "Whether to enable the home-manager module";
   };
@@ -7,7 +10,7 @@
 
   config = lib.mkIf config.homeManager.enable {
     home-manager = {
-      extraSpecialArgs = { inherit inputs; inherit userSettings; };
+      extraSpecialArgs = { inherit inputs; inherit userSettings; inherit globalConfig; };
       backupFileExtension = "backup";
       users.${userSettings.username} = {
         imports = [
