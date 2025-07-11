@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./gc.nix
     ./hyprland
     ./home-manager.nix
     ./nvf.nix
