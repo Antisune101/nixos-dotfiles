@@ -1,6 +1,7 @@
 { config, lib, ... }: {
   imports = [
     ./git.nix
+    ./hyprland
     ./librewolf.nix
     ./kitty.nix
   ];
