@@ -20,6 +20,8 @@
                     autocomplete.nvim-cmp.enable = true;
                     languages = {
                         enableTreesitter = true;
+                        enableFormat = true;
+                        lsp.enable = true;
 
                     };
                 };
