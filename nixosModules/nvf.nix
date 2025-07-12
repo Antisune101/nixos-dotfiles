@@ -23,6 +23,8 @@
                         enableFormat = true;
                         lsp.enable = true;
 
+                        nix.enable = true;
+                        rust.enable = true;
                     };
                 };
             };
