@@ -6,6 +6,7 @@
     ./hyprland
     ./home-manager.nix
     ./nvf.nix
+    ./services/kanata.nix
     ./services/pipewire.nix
     ./steam.nix
   ];
@@ -15,5 +16,6 @@
   homeManager.enable = lib.mkDefault true;
   nvf.enable = lib.mkDefault true;
   pipewire.enable = lib.mkDefault true;
+    kanata.enable = lib.mkDefault true;
     steam.enable = lib.mkDefault true;
 }

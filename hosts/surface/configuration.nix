@@ -3,6 +3,11 @@
 {
   # Custom module configuration
   hyprland.enable = true;
+    kanata.devices = [
+        "/dev/input/by-path/pci-0000:00:14.0-usb-0:8:1.0-event-kbd"
+        "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:8:1.0-event-kbd"
+    ];
+
 
   imports =
     [ # Include the results of the hardware scan.
