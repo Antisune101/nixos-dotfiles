@@ -7,6 +7,7 @@
     ./home-manager.nix
     ./nvf.nix
     ./services/pipewire.nix
+    ./steam.nix
   ];
 
   # Default module configuration
@@ -14,4 +15,5 @@
   homeManager.enable = lib.mkDefault true;
   nvf.enable = lib.mkDefault true;
   pipewire.enable = lib.mkDefault true;
+    steam.enable = lib.mkDefault true;
 }
