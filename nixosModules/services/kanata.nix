@@ -35,16 +35,17 @@
                 extraDefCfg = "process-unmapped-keys yes";
                 config = ''
                     (defsrc a s d f j k l ; )
+                    (defvar tap-hold-timeout 200)
                     (deflayer
                         homeMod
-                        (tap-hold 200 200 a lmet)
-                        (tap-hold 200 200 s lalt)
-                        (tap-hold 200 200 d lsft)
-                        (tap-hold 200 200 f lctl)
-                        (tap-hold 200 200 j lctl)
-                        (tap-hold 200 200 k lsft)
-                        (tap-hold 200 200 l lalt)
-                        (tap-hold 200 200 ; lmet)
+                        (tap-hold $tap-hold-timeout $tap-hold-timeout a lmet)
+                        (tap-hold $tap-hold-timeout $tap-hold-timeout s lalt)
+                        (tap-hold $tap-hold-timeout $tap-hold-timeout d lsft)
+                        (tap-hold $tap-hold-timeout $tap-hold-timeout f lctl)
+                        (tap-hold $tap-hold-timeout $tap-hold-timeout j lctl)
+                        (tap-hold $tap-hold-timeout $tap-hold-timeout k lsft)
+                        (tap-hold $tap-hold-timeout $tap-hold-timeout l lalt)
+                        (tap-hold $tap-hold-timeout $tap-hold-timeout ; lmet)
                     )
                 '';
             };
