@@ -34,14 +34,17 @@
                 devices = config.kanata.devices;
                 extraDefCfg = "process-unmapped-keys yes";
                 config = ''
-                    (defsrc a s d f ; )
+                    (defsrc a s d f j k l ; )
                     (deflayer
                         homeMod
                         (tap-hold 200 200 a lmet)
                         (tap-hold 200 200 s lalt)
                         (tap-hold 200 200 d lsft)
                         (tap-hold 200 200 f lctl)
-                        (tap-hold 200 200 ; rsft)
+                        (tap-hold 200 200 j lctl)
+                        (tap-hold 200 200 k lsft)
+                        (tap-hold 200 200 l lalt)
+                        (tap-hold 200 200 ; lmet)
                     )
                 '';
             };
