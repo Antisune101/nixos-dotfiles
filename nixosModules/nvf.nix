@@ -18,10 +18,10 @@
                     options.shiftwidth = 4;
                     telescope.enable = true;
                     autocomplete.nvim-cmp.enable = true;
+                    lsp.enable = true;
                     languages = {
                         enableTreesitter = true;
                         enableFormat = true;
-                        lsp.enable = true;
 
                         nix.enable = true;
                         rust.enable = true;
