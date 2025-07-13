@@ -1,4 +1,4 @@
-{ config, lib, inputs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
     options = {
@@ -10,6 +10,10 @@
     ];
 
     config = lib.mkIf config.nvf.enable {
+        environment.systemPackages = with pkgs; [
+            gcc
+        ];
+
         programs.nvf = {
             enable = true;
             settings = {
