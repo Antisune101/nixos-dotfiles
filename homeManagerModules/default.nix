@@ -1,10 +1,10 @@
 { config, lib, ... }: {
   imports = [
-    ./git.nix
+    ./cliPrograms/git.nix
+    ./cliPrograms/yazi.nix
     ./hyprland
-    ./librewolf.nix
-    ./kitty.nix
-    ./yazi.nix
+    ./guiPrograms/librewolf.nix
+    ./guiPrograms/kitty.nix
   ];
 
   # Module defaults
