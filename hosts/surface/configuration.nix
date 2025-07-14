@@ -3,7 +3,7 @@
 {
     # Custom module configuration
     hyprland.enable = true;
-    hyprland.monitor = "DP-1, 2736x1824, 0x0, auto";
+    hyprland.monitors = "DP-1, 2736x1824, 0x0, auto";
     kanata.devices = [
         "/dev/input/by-path/pci-0000:00:14.0-usb-0:8:1.0-event-kbd"
         "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:8:1.0-event-kbd"
