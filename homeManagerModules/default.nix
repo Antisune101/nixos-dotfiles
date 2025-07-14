@@ -1,5 +1,6 @@
 { config, lib, ... }: {
   imports = [
+    ./cliPrograms/btop.nix
     ./cliPrograms/git.nix
     ./cliPrograms/yazi.nix
     ./hyprland
@@ -8,6 +9,7 @@
   ];
 
   # Module defaults
+    btop.enable = lib.mkDefault true;
     git.enable = lib.mkDefault true;
     librewolf.enable = lib.mkDefault true;
     kitty.enable = lib.mkDefault true;
