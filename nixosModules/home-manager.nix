@@ -12,6 +12,7 @@ in {
     home-manager = {
       extraSpecialArgs = { inherit inputs; inherit userSettings; inherit globalConfig; };
       backupFileExtension = "backup";
+            useUserPackages = true;
       users.${userSettings.username} = {
         imports = [
           inputs.self.outputs.homeManagerModules.default
