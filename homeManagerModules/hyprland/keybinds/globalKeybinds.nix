@@ -3,8 +3,7 @@
         "$mainMod" = "SUPER";
 
         bind = [
-            ", XF86AudioPlay, exec, playerctl --player=YoutubeMusic play-pause"
-            ", XF86AudioStop, exec, playerctl --player=firefox play-pause"
+            ", XF86AudioPlay, exec, playerctl play-pause"
             ", XF86AudioNext, exec, playerctl --player=YoutubeMusic next"
             ", XF86AudioPrev, exec, playerctl --player=YoutubeMusic previous"
         ];
