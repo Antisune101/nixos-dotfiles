@@ -1,5 +1,7 @@
 { config, lib, ... }: {
     config.wayland.windowManager.hyprland.settings = lib.mkIf config.hyprland.enable {
+        "$mainMod" = "SUPER";
+
         bind = [
             ", XF86AudioPlay, exec, playerctl --player=YoutubeMusic play-pause"
             ", XF86AudioStop, exec, playerctl --player=firefox play-pause"
