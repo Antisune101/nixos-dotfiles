@@ -11,6 +11,7 @@
     ./services/kanata.nix
     ./services/pipewire.nix
     ./steam.nix
+    ./stylix.nix
   ];
 
     # Default module configuration
@@ -22,4 +23,5 @@
     nvf.enable = lib.mkDefault true;
     pipewire.enable = lib.mkDefault true;
     steam.enable = lib.mkDefault true;
+    stylix.enable = lib.mkDefault true;
 }
