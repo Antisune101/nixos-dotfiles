@@ -4,6 +4,8 @@
   # Custom module configuration
   hyprland.enable = true;
     hyprland.monitors = "DP-1, 1920x1080@180, 0x0, auto";
+    jellyfin.enable = true;
+    ddns-updater.enable = true;
   kanata.devices = [
     "/dev/input/by-path/pci-0000:12:00.3-usb-0:2:1.1-event-kbd"
     "/dev/input/by-path/pci-0000:12:00.3-usbv2-0:2:1.1-event-kbd"
@@ -24,12 +26,16 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos-pc"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-
-  # Enable networking
-  networking.networkmanager.enable = true;
+    networking = {
+        hostName = "nixos-pc"; # Define your hostname.
+        networkmanager.enable = true;
+        interfaces.wlp15s0.ipv4.addresses = [{
+            address = "192.168.18.10";
+            prefixLength = 24;
+        }];
+        defaultGateway = "192.168.18.1";
+        nameservers = [ "8.8.8.8" ];
+    };
 
   # Set your time zone.
   time.timeZone = "Africa/Johannesburg";
