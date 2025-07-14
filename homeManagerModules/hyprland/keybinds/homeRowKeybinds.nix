@@ -5,7 +5,7 @@
         hyprland.homeRowKeybindings.enable = lib.mkEnableOption "Whether to use home-row specialised keybinds";
     };
 
-    config.wayland.windowManager.hyprland.settings = lib.mkIf config.hyprland.homeRowKeybinds.enable  {
+    config.wayland.windowManager.hyprland.settings = lib.mkIf config.hyprland.homeRowKeybindings.enable  {
         bind = [
             "$mainMod, N, exec, $terminal"
             "$mainMod SHIFT, N, exec, $menu"

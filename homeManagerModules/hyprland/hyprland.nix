@@ -14,7 +14,7 @@
                 "$cliFilemanager" = "$terminal yazi";
                 "$menu" = "rofi -show drun";
 
-                monitor = globalConfig.hyprland.monitor;
+                monitor = globalConfig.hyprland.monitors;
 
                 env = [
                     "XCURSOR_SIZE,24"
@@ -44,7 +44,7 @@
                         enabled = true;
                         size = 3;
                         passes = 1;
-                        virbrancy = 0.1696;
+                        vibrancy = 0.1696;
                     };
                 };
 
@@ -65,7 +65,7 @@
                     kb_options = "compose:alt";
                     follow_mouse = 1;
                     sensitivity = 0;
-                    numblock_by_default = true;
+                    numlock_by_default = true;
                 };
             };
         };
