@@ -11,6 +11,7 @@
 
     # Module defaults
     config = lib.mkIf globalConfig.hyprland.enable {
+        hyprland.enable = true;
         hyprland.dunst.enable = lib.mkDefault true;
         hyprland.homeRowKeybindings.enable = lib.mkIf globalConfig.kanata.enable true;
         hyprland.hyprpolkit.enable = lib.mkDefault true;
