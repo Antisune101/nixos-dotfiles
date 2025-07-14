@@ -6,6 +6,7 @@
     ./hyprland
     ./guiPrograms/librewolf.nix
     ./guiPrograms/kitty.nix
+    ./guiPrograms/yt-music.nix
   ];
 
   # Module defaults
@@ -14,4 +15,5 @@
     librewolf.enable = lib.mkDefault true;
     kitty.enable = lib.mkDefault true;
     yazi.enable = lib.mkDefault true;
+    yt-music.enable = lib.mkDefault true;
 }
