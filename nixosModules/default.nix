@@ -9,6 +9,7 @@
     ./services/ddns-updater.nix
     ./services/jellyfin.nix
     ./services/kanata.nix
+    ./services/openrgb.nix
     ./services/pipewire.nix
     ./steam.nix
     ./stylix.nix
@@ -21,6 +22,7 @@
     ddns-updater.enable = lib.mkDefault false;
     kanata.enable = lib.mkDefault true;
     nvf.enable = lib.mkDefault true;
+    openrgb.enable = lib.mkDefault false;
     pipewire.enable = lib.mkDefault true;
     steam.enable = lib.mkDefault true;
     stylix.enable = lib.mkDefault true;
