@@ -7,6 +7,7 @@
     ./guiPrograms/3d_printing.nix
     ./guiPrograms/kitty.nix
     ./guiPrograms/librewolf.nix
+    ./guiPrograms/musescore.nix
     ./guiPrograms/yt-music.nix
   ];
 
@@ -16,6 +17,7 @@
     git.enable = lib.mkDefault true;
     kitty.enable = lib.mkDefault true;
     librewolf.enable = lib.mkDefault true;
+    musescore.enable = lib.mkDefault true;
     yazi.enable = lib.mkDefault true;
     yt-music.enable = lib.mkDefault true;
 }
