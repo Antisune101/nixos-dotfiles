@@ -10,11 +10,11 @@
     ];
 
     # Module defaults
-    config = lib.mkIf globalConfig.hyprland.enable {
-        hyprland.enable = true;
-        hyprland.dunst.enable = lib.mkDefault true;
-        hyprland.homeRowKeybindings.enable = lib.mkIf globalConfig.kanata.enable true;
-        hyprland.hyprpolkit.enable = lib.mkDefault true;
-        hyprland.rofi.enable = lib.mkDefault true;
+    config.hyprland = lib.mkIf globalConfig.hyprland.enable {
+        enable = true;
+        dunst.enable = lib.mkDefault true;
+        homeRowKeybindings.enable = lib.mkIf globalConfig.kanata.enable true;
+        hyprpolkit.enable = lib.mkDefault true;
+        rofi.enable = lib.mkDefault true;
     };
 }
