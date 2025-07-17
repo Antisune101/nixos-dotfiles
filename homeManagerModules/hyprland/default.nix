@@ -3,7 +3,7 @@
 {
     imports = [
         ./hyprland.nix
-        ./keybinds
+        ./keybinds.nix
         ./hyprpolkit.nix
         ./dunst.nix
         ./rofi.nix
