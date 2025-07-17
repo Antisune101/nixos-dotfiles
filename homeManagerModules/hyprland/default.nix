@@ -7,6 +7,7 @@
         ./hyprpolkit.nix
         ./dunst.nix
         ./rofi.nix
+        ./swayosd.nix
         ./waybar.nix
     ];
 
@@ -17,6 +18,7 @@
         homeRowKeybindings.enable = lib.mkIf globalConfig.kanata.enable true;
         hyprpolkit.enable = lib.mkDefault true;
         rofi.enable = lib.mkDefault true;
+        swayosd.enable = lib.mkDefault true;
         waybar.enable = lib.mkDefault true;
     };
 }
