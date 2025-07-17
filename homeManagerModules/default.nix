@@ -8,6 +8,7 @@
     ./guiPrograms/kitty.nix
     ./guiPrograms/librewolf.nix
     ./guiPrograms/musescore.nix
+    ./guiPrograms/obsidian.nix
     ./guiPrograms/yt-music.nix
   ];
 
@@ -18,6 +19,7 @@
     kitty.enable = lib.mkDefault true;
     librewolf.enable = lib.mkDefault true;
     musescore.enable = lib.mkDefault true;
+    obsidian.enable = lib.mkDefault true;
     yazi.enable = lib.mkDefault true;
     yt-music.enable = lib.mkDefault true;
 }

@@ -13,6 +13,7 @@ in {
       extraSpecialArgs = { inherit inputs; inherit userSettings; inherit globalConfig; };
       backupFileExtension = "backup";
             useUserPackages = true;
+            useGlobalPkgs = true;
       users.${userSettings.username} = {
         imports = [
           inputs.self.outputs.homeManagerModules.default
