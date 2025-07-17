@@ -11,6 +11,7 @@
     ./services/kanata.nix
     ./services/openrgb.nix
     ./services/pipewire.nix
+    ./services/usb.nix
     ./steam.nix
     ./stylix.nix
   ];
@@ -26,4 +27,5 @@
     pipewire.enable = lib.mkDefault true;
     steam.enable = lib.mkDefault true;
     stylix.enable = lib.mkDefault true;
+    usb.enable = lib.mkDefault true;
 }
