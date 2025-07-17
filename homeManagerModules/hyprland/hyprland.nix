@@ -11,7 +11,7 @@
             enable = true;
             settings = {
                 "$terminal" = "kitty";
-                "$cliFilemanager" = "$terminal yazi";
+                "$filemanager" = "$terminal yazi";
                 "$menu" = "rofi -show drun";
 
                 monitor = globalConfig.hyprland.monitors;
