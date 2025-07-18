@@ -61,6 +61,12 @@
             "$mainMod SHIFT, 7, movetoworkspace, 7"
             "$mainMod SHIFT, 8, movetoworkspace, 8"
             ] ) ++ [
+            # Window navigation with keyboard
+            "$mainMod, K, cyclenext"
+            "$mainMod, J, cyclenext, prev"
+            "$mainMod, I, swapnext"
+            "$mainMod, U, swapnext, prev"
+            # Media keys
             ", XF86AudioPlay, exec, playerctl play-pause"
             ", XF86AudioNext, exec, playerctl next"
             ", XF86AudioPrev, exec, playerctl previous"
