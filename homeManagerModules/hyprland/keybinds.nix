@@ -11,7 +11,7 @@
         bind = ( if (config.hyprland.homeRowKeybindings.enable) then [
             "$mainMod, N, exec, $terminal"
             "$mainMod SHIFT, N, exec, $menu"
-            "$mainMod, U, exec, $filemanager"
+            "$mainMod, M, exec, $filemanager"
             "$mainMod, V, killactive"
             "$mainMod SHIFT, Q, exit"
             "$mainMod CTRL, SPACE, fullscreen"
