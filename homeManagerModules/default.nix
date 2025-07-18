@@ -1,4 +1,4 @@
-{ config, lib, ... }: {
+{ config, lib, globalConfig, ... }: {
   imports = [
     ./cliPrograms/btop.nix
     ./cliPrograms/git.nix
@@ -11,6 +11,7 @@
     ./guiPrograms/obsidian.nix
     ./guiPrograms/vesktop.nix
     ./guiPrograms/yt-music.nix
+    ./stylix.nix
   ];
 
   # Module defaults
@@ -21,6 +22,7 @@
     librewolf.enable = lib.mkDefault true;
     musescore.enable = lib.mkDefault true;
     obsidian.enable = lib.mkDefault true;
+    stylix.enable = lib.mkDefault globalConfig.stylix.enable;
     yazi.enable = lib.mkDefault true;
     vesktop.enable = lib.mkDefault true;
     yt-music.enable = lib.mkDefault true;
