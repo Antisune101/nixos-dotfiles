@@ -9,6 +9,7 @@
     ./guiPrograms/librewolf.nix
     ./guiPrograms/musescore.nix
     ./guiPrograms/obsidian.nix
+    ./guiPrograms/vesktop.nix
     ./guiPrograms/yt-music.nix
   ];
 
@@ -21,5 +22,6 @@
     musescore.enable = lib.mkDefault true;
     obsidian.enable = lib.mkDefault true;
     yazi.enable = lib.mkDefault true;
+    vesktop.enable = lib.mkDefault true;
     yt-music.enable = lib.mkDefault true;
 }
