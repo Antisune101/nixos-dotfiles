@@ -14,6 +14,8 @@
                 "$filemanager" = "$terminal yazi";
                 "$menu" = "rofi -show drun";
 
+                exec-once = ( if config.hyprland.waybar.enable then [ "waybar" ] else [] ) ++ ( if config.hyprland.hyprpolkit.enable then [ "systemctl --user start hyprpolkitagent" ] else [] );
+
                 monitor = globalConfig.hyprland.monitors;
 
                 env = [

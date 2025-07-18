@@ -9,7 +9,6 @@
         home.packages = with pkgs; [ nerd-fonts.dejavu-sans-mono ];
         programs.waybar = {
             enable = true;
-            systemd.enable = true;
         };
     };
 }
