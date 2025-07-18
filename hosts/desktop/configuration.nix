@@ -54,7 +54,7 @@
   users.users.antisune = {
     isNormalUser = true;
     description = "Ewan Bester";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "input" ];
     packages = with pkgs; [];
   };
 
