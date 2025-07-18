@@ -13,7 +13,7 @@
             "$mainMod SHIFT, N, exec, $menu"
             "$mainMod, M, exec, $filemanager"
             "$mainMod, V, killactive"
-            "$mainMod SHIFT, Q, exit"
+            "$mainMod SHIFT, ESCAPE, exit"
             "$mainMod CTRL, SPACE, fullscreen"
             "$mainMod, SPACE, togglefloating"
 
