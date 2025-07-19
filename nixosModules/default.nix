@@ -11,6 +11,7 @@
     ./services/kanata.nix
     ./services/openrgb.nix
     ./services/pipewire.nix
+    ./services/printing.nix
     ./services/usb.nix
     ./steam.nix
     ./stylix.nix
@@ -25,6 +26,7 @@
     nvf.enable = lib.mkDefault true;
     openrgb.enable = lib.mkDefault false;
     pipewire.enable = lib.mkDefault true;
+    printing.enable = lib.mkDefault true;
     steam.enable = lib.mkDefault true;
     stylix.enable = lib.mkDefault true;
     usb.enable = lib.mkDefault true;
