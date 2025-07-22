@@ -1,4 +1,4 @@
-{ config, globalConfig, lib, ... }:
+{ config, globalConfig, lib, pkgs, ... }:
 {
     options = {
         stylix.namedColors = lib.mkOption {
@@ -9,5 +9,12 @@
 
     config.stylix = lib.mkIf config.stylix.enable {
         namedColors = globalConfig.stylix.namedColors;
+        iconTheme = {
+            enable = true;
+            package = pkgs.papirus-icon-theme;
+            light = "Papirus-Light";
+            dark = "Papirus-Dark";
+        };
+        
     };
 }
