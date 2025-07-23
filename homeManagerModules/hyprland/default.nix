@@ -8,6 +8,7 @@
         ./dunst.nix
         ./rofi.nix
         ./swayosd.nix
+        ./swww.nix
         ./waybar.nix
     ];
 
@@ -19,6 +20,7 @@
         hyprpolkit.enable = lib.mkDefault true;
         rofi.enable = lib.mkDefault true;
         swayosd.enable = lib.mkDefault true;
+        swww.enable = lib.mkDefault true;
         waybar.enable = lib.mkDefault true;
     };
 }
