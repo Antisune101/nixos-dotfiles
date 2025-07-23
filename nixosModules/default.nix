@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./1password.nix
     ./gc.nix
     ./hyprland
     ./home-manager.nix
@@ -18,6 +19,7 @@
   ];
 
     # Default module configuration
+    _1password.enable = lib.mkDefault true;
     hyprland.enable = lib.mkDefault true;
     homeManager.enable = lib.mkDefault true;
     jellyfin.enable = lib.mkDefault false;
