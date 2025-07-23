@@ -49,6 +49,7 @@ let colors = config.stylix.namedColors; in
                             "(.*) - Brave" = "Brave Browser";
                             "(.*) — Ablaze Floorp" = "Oddly named Firefox";
                             "(.*) — Mozilla Firefox" = "Firefox";
+                            "(.*) — Librewolf" = "Librewolf";
                         };
                     };
 
