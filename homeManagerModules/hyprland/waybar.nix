@@ -54,8 +54,8 @@ let colors = config.stylix.namedColors; in
                     };
 
                     mpris = {
-                        format-playing = "[ {title} - {artist} ][{status}]";
-                        format-paused = "[ {title} - {artist} ][{status} ]";
+                        format-playing = "[ {title} - {artist} ] [{status}]";
+                        format-paused = "[ {title} - {artist} ] [{status} ]";
                         title-len = 30;
                         artist-len = 20;
                         player = "YoutubeMusic";
@@ -68,7 +68,7 @@ let colors = config.stylix.namedColors; in
                     pulseaudio = {
                         scroll-step = 2;
                         max-volume = 100;
-                        format = "[ Audio {volume}% ][ {format_source} ]";
+                        format = "[ Audio {volume}% ] [ {format_source} ]";
                         format-source = "Mic ON ";
                         format-source-muted = "Mic OFF";
                         on-click = "pavucontrol";
