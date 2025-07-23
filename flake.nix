@@ -35,7 +35,11 @@
     lib = nixpkgs.lib;
 
     userSettings = {
-      username = "antisune";
+        username = "antisune";
+        font = {
+            name = "IosevkaTerm Nerd Font";
+            package = pkgs.nerd-fonts.iosevka-term;
+        };
     };
   in
   {
