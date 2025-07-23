@@ -94,6 +94,40 @@ let colors = config.stylix.namedColors; in
                     tray.spacing = 4;
                 };
             };
+            style = ''
+                * {
+                    padding: 0;
+                    margin: 0;
+                    border-radius: 0;
+                    border: none;
+                    font-size: 20px;
+                }
+
+                window#waybar {
+                    padding-left: 5px;
+                }
+
+                #workspaces {
+                    color: ${colors.main};
+                }
+
+                #workspaces button {
+                    padding: 5px;
+                }
+
+                #workspaces button:hover {
+                    background-color: ${colors.alt_background};
+                }
+
+                #workspaces button.empty {
+                    color: ${colors.alt_main};
+                }
+
+                #workspaces button.active, #workspaces button.focused {
+                    color: ${colors.background};
+                    background-color: ${colors.main};
+                }
+            '';
         };
     };
 }
