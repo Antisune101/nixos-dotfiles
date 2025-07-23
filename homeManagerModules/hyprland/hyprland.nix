@@ -37,7 +37,7 @@
                     rounding = 0;
 
                     shadow = {
-                        enabled = true;
+                        enabled = false;
                         range = 4;
                         render_power = 3;
                         # TODO: move these to a module that get's disabled if you use stylix
