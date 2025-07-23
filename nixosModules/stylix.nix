@@ -1,4 +1,4 @@
-{ config, lib, inputs, pkgs, ... }:
+{ config, lib, inputs, pkgs, userSettings, ... }:
 
 {
     imports = [
@@ -13,17 +13,35 @@
     };
 
 
-    config = lib.mkIf config.stylix.enable {
-        stylix = {
-            base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
+    config.stylix = lib.mkIf config.stylix.enable {
+        base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
 
-            cursor = {
-              package = pkgs.bibata-cursors;
-              name = "Bibata-Modern-Ice";
-              size = 24;
+        fonts = {
+            serif = {
+                package = userSettings.font.package;
+                name = userSettings.font.name;
+            };
+            sansSerif = {
+                package = userSettings.font.package;
+                name = userSettings.font.name;
+            };
+            monospace = {
+                package = userSettings.font.package;
+                name = userSettings.font.name;
+            };
+            emoji = {
+                package = pkgs.noto-fonts-emoji;
+                name = "Noto Color Emoji";
             };
         };
-        stylix.namedColors = let colors = config.lib.stylix.colors; in {
+
+        cursor = {
+          package = pkgs.bibata-cursors;
+          name = "Bibata-Modern-Ice";
+          size = 24;
+        };
+
+        namedColors = let colors = config.lib.stylix.colors; in {
             background = "#${colors.base00}";
             alt_background = "#${colors.base01}";
             main = "#${colors.base05}";
