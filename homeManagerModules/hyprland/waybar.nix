@@ -6,6 +6,12 @@ let colors = config.stylix.namedColors; in
     };
 
     config = lib.mkIf config.hyprland.waybar.enable {
+        stylix.targets.waybar = {
+            addCss = false;
+            enableLeftBackColors = false;
+            enableRightBackColors = false;
+            enableCenterBackColors = false;
+        };
         home.packages = with pkgs; [ nerd-fonts.dejavu-sans-mono ];
         programs.waybar = {
             enable = true;
