@@ -3,6 +3,7 @@
 {
     imports = [
         ./hyprland.nix
+        ./hyprlock.nix
         ./keybinds.nix
         ./hyprpolkit.nix
         ./dunst.nix
@@ -17,6 +18,7 @@
         enable = true;
         dunst.enable = lib.mkDefault true;
         homeRowKeybindings.enable = lib.mkIf globalConfig.kanata.enable true;
+        hyprlock.enable = lib.mkDefault true;
         hyprpolkit.enable = lib.mkDefault true;
         rofi.enable = lib.mkDefault true;
         swayosd.enable = lib.mkDefault true;

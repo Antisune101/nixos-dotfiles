@@ -70,7 +70,7 @@
             ", XF86AudioPlay, exec, playerctl play-pause"
             ", XF86AudioNext, exec, playerctl next"
             ", XF86AudioPrev, exec, playerctl previous"
-        ];
+        ] ++ ( if (config.hyprland.hyprlock.enable) then [ "$mainMod, L, exec, playerctl --all-players pause && hyprlock" ] else [] );
 
         binde = if (config.hyprland.swayosd.enable) then [
             # Volume and Mic
