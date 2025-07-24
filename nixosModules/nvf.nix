@@ -10,6 +10,10 @@
     ];
 
     config = lib.mkIf config.nvf.enable {
+        environment.sessionVariables = {
+            EDITOR = "nvim";
+        };
+
         environment.systemPackages = with pkgs; [
             gcc
         ];
