@@ -74,6 +74,16 @@ let colors = config.stylix.namedColors; in
                         on-click = "pavucontrol";
                     };
 
+                    battery = {
+                        interval = 60;
+                        states = {
+                            warning = 30;
+                            critical = 15;
+                        };
+                        format = "[{icon}  {capacity}%]";
+                        format-icons = ["" "" "" "" ""];
+                    };
+
                     clock = {
                         format = "[ {:%H:%M} ]";
                         tooltip-format = "<tt><small>{calendar}</small></tt>";
