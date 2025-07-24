@@ -77,7 +77,7 @@
             ",XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise --max-volume 100"
             ",XF86AudioLowerVolume, exec, swayosd-client --output-volume lower"
             ",PAUSE, exec, swayosd-client --input-volume mute-toggle"
-            ",XF86AudioMicMute, exec, swayosd-client --input-volume mute-toggle"
+            ",XF86AudioMute, exec, swayosd-client --input-volume mute-toggle"
             #Brightness
             ",XF86MonBrightnessUp, exec, swayosd-client --brightness raise"
             ",XF86MonBrightnessDown, exec, swayosd-client --brightness lower"
@@ -86,12 +86,12 @@
             ",XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1"
             ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
             ",PAUSE, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-            ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+            ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
             #Brightness
             ",XF86MonBrightnessUp, exec, brightnessctl s 5%-"
             ",XF86MonBrightnessDown, exec, brightnessctl s +5%"
             
-        ];
+        ] ;
 
         bindm = [
           "$mainMod, mouse:272, movewindow"
