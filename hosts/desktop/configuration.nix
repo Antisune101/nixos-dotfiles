@@ -2,6 +2,7 @@
 
 {
   # Custom module configuration
+    docker.enable = true;
   hyprland.enable = true;
     hyprland.monitors = "DP-1, 1920x1080@180, 0x0, auto";
     jellyfin.enable = true;
