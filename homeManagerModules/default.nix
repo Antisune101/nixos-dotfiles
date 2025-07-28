@@ -12,6 +12,7 @@
     ./guiPrograms/obsidian.nix
     ./guiPrograms/vesktop.nix
     ./guiPrograms/yt-music.nix
+    ./guiPrograms/vscode.nix
     ./stylix.nix
   ];
 
@@ -27,5 +28,6 @@
     stylix.enable = lib.mkDefault globalConfig.stylix.enable;
     yazi.enable = lib.mkDefault true;
     vesktop.enable = lib.mkDefault true;
+    vscode.enable = lib.mkDefault true;
     yt-music.enable = lib.mkDefault true;
 }
