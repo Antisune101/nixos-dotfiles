@@ -15,6 +15,7 @@
     ./services/pipewire.nix
     ./services/printing.nix
     ./services/usb.nix
+    ./services/syncthing.nix
     ./steam.nix
     ./stylix.nix
   ];
@@ -33,5 +34,6 @@
     printing.enable = lib.mkDefault true;
     steam.enable = lib.mkDefault true;
     stylix.enable = lib.mkDefault true;
+    syncthing.enable = lib.mkDefault true;
     usb.enable = lib.mkDefault true;
 }
