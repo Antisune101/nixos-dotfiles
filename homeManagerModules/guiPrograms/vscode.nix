@@ -1,5 +1,5 @@
 
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 
 {
     options = {
@@ -7,6 +7,11 @@
     };
 
     config = lib.mkIf config.vscode.enable {
-        programs.vscode.enable = true;
+        programs.vscode = {
+            enable = true;
+            extensions = with pkgs.vscode-extensions; [
+                ritwickdey.liveserver
+            ];
+        };
     };
 }
