@@ -44,7 +44,7 @@
   in
   {
     nixosConfigurations = {
-      desktop = lib.nixosSystem {
+      nixos-pc = lib.nixosSystem {
         specialArgs = { inherit inputs; inherit system; inherit userSettings; };
         modules = [
           ./hosts/desktop/configuration.nix
@@ -52,7 +52,7 @@
           ];
       };
 
-      surface = lib.nixosSystem {
+      nixos-surface = lib.nixosSystem {
         specialArgs = {inherit inputs; inherit system; inherit userSettings; };
         modules = [
           ./hosts/surface/configuration.nix
