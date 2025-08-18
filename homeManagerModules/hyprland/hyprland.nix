@@ -17,7 +17,7 @@
                 exec-once = ( if config.hyprland.waybar.enable then [ "waybar" ] else [] )
                     ++ ( if config.hyprland.hyprpolkit.enable then [ "systemctl --user start hyprpolkitagent" ] else [] )
                     ++ ( if config.hyprland.swww.enable then [ "swww-daemon" ] else [] )
-                    ++ ( if config.hyprland.swayosd.enable then [ "systenctl --user restart swayosd" ] else [] );
+                    ++ ( if config.hyprland.swayosd.enable then [ "systemctl --user start swayosd" ] else [] );
 
                 monitor = globalConfig.hyprland.monitors;
 
