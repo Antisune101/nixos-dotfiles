@@ -12,6 +12,11 @@
 
         services.dunst = {
             enable = true;
+            settings.global = {
+                offset = "6x6";
+                gap_size = 3;
+                frame_width = 2;
+            };
         };
     };
 }
