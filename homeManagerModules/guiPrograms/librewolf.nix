@@ -6,6 +6,7 @@
     };
     
     config = lib.mkIf config.librewolf.enable {
+        stylix.targets.librewolf.profileNames = [ "default" ]; 
         programs.librewolf = {
             enable = true;
         };
