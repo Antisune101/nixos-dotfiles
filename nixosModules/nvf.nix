@@ -38,6 +38,7 @@
                         nix.enable = true;
                         rust.enable = true;
                         lua.enable = true;
+                        python.enable = true;
                     };
                 };
             };
