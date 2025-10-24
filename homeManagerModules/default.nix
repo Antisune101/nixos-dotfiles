@@ -2,6 +2,7 @@
   imports = [
     ./cliPrograms/btop.nix
     ./cliPrograms/git.nix
+    ./cliPrograms/wiremix.nix
     ./cliPrograms/yazi.nix
     ./hyprland
     ./guiPrograms/3d_printing.nix
@@ -31,5 +32,6 @@
     yazi.enable = lib.mkDefault true;
     vesktop.enable = lib.mkDefault true;
     vscode.enable = lib.mkDefault true;
+    wiremix.enable = lib.mkDefault true;
     yt-music.enable = lib.mkDefault true;
 }

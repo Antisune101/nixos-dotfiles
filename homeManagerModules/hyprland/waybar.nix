@@ -71,7 +71,7 @@ let colors = config.stylix.namedColors; in
                         format = "[ Audio {volume}% ] [ {format_source} ]";
                         format-source = "Mic ON ";
                         format-source-muted = "Mic OFF";
-                        on-click = "pavucontrol";
+                        on-click = "kitty wiremix";
                     };
 
                     battery = {
