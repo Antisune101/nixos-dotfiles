@@ -9,12 +9,12 @@
         "$mainMod" = "SUPER";
 
         bind = ( if (config.hyprland.homeRowKeybindings.enable) then [
-            "$mainMod, N, exec, $terminal"
-            "$mainMod SHIFT, N, exec, $menu"
+            "$mainMod, T, exec, $terminal"
+            "$mainMod, N, exec, $menu"
             "$mainMod, M, exec, $filemanager"
             "$mainMod, V, killactive"
             "ALT, F4, exit"
-            "$mainMod CTRL, SPACE, fullscreen"
+            "$mainMod SHIFT, SPACE, fullscreen"
             "$mainMod, SPACE, togglefloating"
 
             "$mainMod, A, workspace, 1"
