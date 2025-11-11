@@ -7,6 +7,7 @@
         ./keybinds.nix
         ./hyprpolkit.nix
         ./dunst.nix
+        ./flameshot.nix
         ./rofi.nix
         ./swayosd.nix
         ./swww.nix
@@ -17,6 +18,7 @@
     config.hyprland = lib.mkIf globalConfig.hyprland.enable {
         enable = true;
         dunst.enable = lib.mkDefault true;
+        flameshot.enable = lib.mkDefault true;
         homeRowKeybindings.enable = lib.mkIf globalConfig.kanata.enable true;
         hyprlock.enable = lib.mkDefault true;
         hyprpolkit.enable = lib.mkDefault true;
