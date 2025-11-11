@@ -16,11 +16,13 @@
                 General = {
                     showStartupLaunchMessage = false;
                     useGrimAdapter = true;
+                    disabledGrimWarning = true;
                     savePath = "/home/${userSettings.username}/Pictures/Screenshots";
                     savePathFixed = true;
                     drawColor = config.stylix.namedColors.main;
                     uiColor = config.stylix.namedColors.main;
                     contrastUiColor = config.stylix.namedColors.background;
+                    showHelp = false;
                 };
             };
         };
