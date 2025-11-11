@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, userSettings, ... }:
 
 {
     options = {
@@ -16,6 +16,8 @@
                 General = {
                     showStartupLaunchMessage = false;
                     useGrimAdapter = true;
+                    savePath = "/home/${userSettings.username}/Pictures/Screenshots";
+                    savePathFixed = true;
                     drawColor = config.stylix.namedColors.main;
                     uiColor = config.stylix.namedColors.main;
                     contrastUiColor = config.stylix.namedColors.background;
