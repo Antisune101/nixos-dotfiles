@@ -11,6 +11,7 @@
     ./guiPrograms/librewolf.nix
     ./guiPrograms/mpv.nix
     ./guiPrograms/musescore.nix
+    ./guiPrograms/nautilus.nix
     ./guiPrograms/obsidian.nix
     ./guiPrograms/vesktop.nix
     ./guiPrograms/yt-music.nix
@@ -27,6 +28,7 @@
     librewolf.enable = lib.mkDefault true;
     mpv.enable = lib.mkDefault true;
     musescore.enable = lib.mkDefault true;
+    nautilus.enable = lib.mkDefault true;
     obsidian.enable = lib.mkDefault true;
     stylix.enable = lib.mkDefault globalConfig.stylix.enable;
     yazi.enable = lib.mkDefault true;
