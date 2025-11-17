@@ -18,6 +18,7 @@
     ./services/syncthing.nix
     ./steam.nix
     ./stylix.nix
+    ./zsh.nix
   ];
 
     # Default module configuration
@@ -36,4 +37,5 @@
     stylix.enable = lib.mkDefault true;
     syncthing.enable = lib.mkDefault true;
     usb.enable = lib.mkDefault true;
+    zsh.enable = lib.mkDefault true;
 }

@@ -36,6 +36,10 @@
 
     userSettings = {
         username = "antisune";
+        shellAliases = {
+            gl = "git log --oneline";
+            rebuild = "sudo nixos-rebuild switch --flake";
+        };
         font = {
             name = "IosevkaTerm Nerd Font";
             package = pkgs.nerd-fonts.iosevka-term;
