@@ -4,6 +4,7 @@
     ./cliPrograms/git.nix
     ./cliPrograms/wiremix.nix
     ./cliPrograms/yazi.nix
+    ./cliPrograms/yt-dlp.nix
     ./cliPrograms/zsh.nix
     ./hyprland
     ./guiPrograms/3d_printing.nix
@@ -36,5 +37,6 @@
     vesktop.enable = lib.mkDefault true;
     vscode.enable = lib.mkDefault true;
     wiremix.enable = lib.mkDefault true;
+    yt-dlp.enable = lib.mkDefault true;
     yt-music.enable = lib.mkDefault true;
 }
