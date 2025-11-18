@@ -6,6 +6,7 @@
             zsh = {
                 enable = true;
                 enableCompletion = true;
+                autosuggestion.enable = true;
                 syntaxHighlighting.enable = true;
                 dotDir = ".config/zsh/";
                 shellAliases = userSettings.shellAliases;
