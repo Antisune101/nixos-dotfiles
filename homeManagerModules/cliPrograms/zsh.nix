@@ -8,7 +8,7 @@
                 enableCompletion = true;
                 autosuggestion.enable = true;
                 syntaxHighlighting.enable = true;
-                dotDir = ".config/zsh/";
+                dotDir = "${config.home.homeDirectory}/.config/zsh/";
                 shellAliases = userSettings.shellAliases;
                 initContent = ''
                     function yyy() { yy; zle reset-prompt; zle redisplay;}
