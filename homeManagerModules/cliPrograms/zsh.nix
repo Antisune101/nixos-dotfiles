@@ -10,6 +10,11 @@
                 syntaxHighlighting.enable = true;
                 dotDir = ".config/zsh/";
                 shellAliases = userSettings.shellAliases;
+                initContent = ''
+                    function yyy() { yy; zle reset-prompt; zle redisplay;}
+                    zle -N yyy
+                    bindkey '^y' yyy
+                '';
             };
             starship = {
                 enable = true;
