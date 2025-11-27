@@ -1,4 +1,4 @@
-{ config, lib, inputs, userSettings, ... }:
+{ config, lib, inputs, userSettings, system, ... }:
 let
     globalConfig = config;
 in {
@@ -10,7 +10,7 @@ in {
 
   config = lib.mkIf config.homeManager.enable {
     home-manager = {
-      extraSpecialArgs = { inherit inputs; inherit userSettings; inherit globalConfig; };
+      extraSpecialArgs = { inherit inputs; inherit userSettings; inherit globalConfig; inherit system; };
       backupFileExtension = "backup";
             useUserPackages = true;
             useGlobalPkgs = true;
