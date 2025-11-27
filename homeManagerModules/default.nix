@@ -2,6 +2,7 @@
   imports = [
     ./cliPrograms/btop.nix
     ./cliPrograms/git.nix
+    ./cliPrograms/gowall.nix
     ./cliPrograms/wiremix.nix
     ./cliPrograms/yazi.nix
     ./cliPrograms/yt-dlp.nix
@@ -26,6 +27,7 @@
     btop.enable = lib.mkDefault true;
     godot.enable = lib.mkDefault true;
     git.enable = lib.mkDefault true;
+    gowall.enable = lib.mkDefault true;
     kitty.enable = lib.mkDefault true;
     librewolf.enable = lib.mkDefault true;
     mpv.enable = lib.mkDefault true;
