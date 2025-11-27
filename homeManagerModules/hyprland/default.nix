@@ -2,6 +2,7 @@
 
 {
     imports = [
+        ./customScripts/randwall.nix
         ./hyprland.nix
         ./hyprlock.nix
         ./keybinds.nix
@@ -17,6 +18,7 @@
     # Module defaults
     config.hyprland = lib.mkIf globalConfig.hyprland.enable {
         enable = true;
+        customScripts.randwall.enable = lib.mkDefault true;
         dunst.enable = lib.mkDefault true;
         flameshot.enable = lib.mkDefault true;
         homeRowKeybindings.enable = lib.mkIf globalConfig.kanata.enable true;
