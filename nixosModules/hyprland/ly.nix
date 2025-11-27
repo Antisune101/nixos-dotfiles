@@ -6,7 +6,7 @@
       enable = true;
       settings = {
         animate = true;
-        animation = "doom";
+        animation = "matrix";
       };
     };
   };
