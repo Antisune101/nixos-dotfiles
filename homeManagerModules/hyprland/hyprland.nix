@@ -1,8 +1,16 @@
 { config, globalConfig, lib, ... }:
 
 {
-    options = {
-        hyprland.enable = lib.mkEnableOption "Enable hyprland for home-manager";
+    options.hyprland = {
+        enable = lib.mkEnableOption "Enable hyprland for home-manager";
+        wallpaperDir = lib.mkOption {
+            default = "${config.home.homeDirectory}/Pictures/Wallpapers/wallpapers";
+            description = "Directory where wallpapers are stored";
+        };
+        themedWallpaperDir = lib.mkOption {
+            default = "${config.home.homeDirectory}/Pictures/Wallpapers/themed_wallpapers";
+            description = "Directory where themed wallpapers are stored";
+        };
     };
 
 
