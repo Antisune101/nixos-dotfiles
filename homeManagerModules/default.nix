@@ -9,6 +9,7 @@
     ./cliPrograms/zsh.nix
     ./hyprland
     ./guiPrograms/3d_printing.nix
+    ./guiPrograms/bottles.nix
     ./guiPrograms/godot.nix
     ./guiPrograms/kitty.nix
     ./guiPrograms/librewolf.nix
@@ -25,6 +26,7 @@
   # Module defaults
     threeDPrinting.enable = lib.mkDefault true;
     btop.enable = lib.mkDefault true;
+    bottles.enable = lib.mkDefault true;
     godot.enable = lib.mkDefault true;
     git.enable = lib.mkDefault true;
     gowall.enable = lib.mkDefault true;
