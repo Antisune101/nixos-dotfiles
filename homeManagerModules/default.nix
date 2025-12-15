@@ -9,6 +9,7 @@
     ./cliPrograms/zsh.nix
     ./hyprland
     ./guiPrograms/3d_printing.nix
+    ./guiPrograms/audacity.nix
     ./guiPrograms/bottles.nix
     ./guiPrograms/godot.nix
     ./guiPrograms/kitty.nix
@@ -24,6 +25,7 @@
   ];
 
   # Module defaults
+    audacity.enable = lib.mkDefault true;
     threeDPrinting.enable = lib.mkDefault true;
     btop.enable = lib.mkDefault true;
     bottles.enable = lib.mkDefault true;
