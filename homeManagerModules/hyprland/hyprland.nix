@@ -1,4 +1,4 @@
-{ config, globalConfig, lib, ... }:
+{ config, globalConfig, inputs, system, lib, ... }:
 
 {
     options.hyprland = {
@@ -17,6 +17,8 @@
     config = lib.mkIf config.hyprland.enable  {
         wayland.windowManager.hyprland = {
             enable = true;
+            package = inputs.hyprland.packages.${system}.hyprland;
+            portalPackage = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
             settings = {
                 "$terminal" = "kitty";
                 "$filemanager" = "$terminal yazi";
