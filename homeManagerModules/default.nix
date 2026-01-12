@@ -13,6 +13,7 @@
     ./guiPrograms/bottles.nix
     ./guiPrograms/godot.nix
     ./guiPrograms/kitty.nix
+    ./guiPrograms/libreoffice.nix
     ./guiPrograms/librewolf.nix
     ./guiPrograms/mpv.nix
     ./guiPrograms/musescore.nix
@@ -33,6 +34,7 @@
     git.enable = lib.mkDefault true;
     gowall.enable = lib.mkDefault true;
     kitty.enable = lib.mkDefault true;
+    libreoffice.enable = lib.mkDefault true;
     librewolf.enable = lib.mkDefault true;
     mpv.enable = lib.mkDefault true;
     musescore.enable = lib.mkDefault true;
