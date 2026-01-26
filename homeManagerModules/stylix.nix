@@ -9,7 +9,7 @@
 
     config.stylix = lib.mkIf config.stylix.enable {
         namedColors = globalConfig.stylix.namedColors;
-        iconTheme = {
+        icons = {
             enable = true;
             package = pkgs.papirus-icon-theme;
             light = "Papirus-Light";
