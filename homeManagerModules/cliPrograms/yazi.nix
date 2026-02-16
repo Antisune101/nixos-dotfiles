@@ -13,6 +13,7 @@
         programs.yazi = {
             enable = true;
             enableZshIntegration = true;
+            shellWrapperName = "y";
             yaziPlugins = {
                 enable = true;
                 plugins = {
