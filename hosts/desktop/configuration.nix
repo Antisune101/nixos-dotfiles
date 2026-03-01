@@ -77,6 +77,7 @@
   nixpkgs.config.allowUnfree = true;
 
   nix.settings.experimental-features = [ "flakes" "nix-command" ];
+    nix.settings.download-buffer-size = 2147483648;
   system.stateVersion = "25.05"; # Did you read the comment? Yes I did :)
 
 }
