@@ -34,7 +34,7 @@
     git.enable = lib.mkDefault true;
     gowall.enable = lib.mkDefault true;
     kitty.enable = lib.mkDefault true;
-    libreoffice.enable = lib.mkDefault true;
+    libreoffice.enable = lib.mkDefault false;
     librewolf.enable = lib.mkDefault true;
     mpv.enable = lib.mkDefault true;
     musescore.enable = lib.mkDefault true;

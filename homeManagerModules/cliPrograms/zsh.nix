@@ -11,9 +11,9 @@
                 dotDir = "${config.home.homeDirectory}/.config/zsh/";
                 shellAliases = userSettings.shellAliases;
                 initContent = ''
-                    function yyy() { yy; zle reset-prompt; zle redisplay;}
-                    zle -N yyy
-                    bindkey '^y' yyy
+                    function yy() { y; zle reset-prompt; zle redisplay;}
+                    zle -N yy
+                    bindkey '^y' yy
                 '';
             };
             starship = {
