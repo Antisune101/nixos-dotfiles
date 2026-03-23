@@ -19,6 +19,7 @@
     ./guiPrograms/musescore.nix
     ./guiPrograms/nautilus.nix
     ./guiPrograms/obsidian.nix
+    ./guiPrograms/swayimg.nix
     ./guiPrograms/vesktop.nix
     ./guiPrograms/yt-music.nix
     ./guiPrograms/vscode.nix
@@ -41,6 +42,7 @@
     nautilus.enable = lib.mkDefault true;
     obsidian.enable = lib.mkDefault true;
     stylix.enable = lib.mkDefault globalConfig.stylix.enable;
+    swayimg.enable = lib.mkDefault true;
     yazi.enable = lib.mkDefault true;
     vesktop.enable = lib.mkDefault true;
     vscode.enable = lib.mkDefault true;
