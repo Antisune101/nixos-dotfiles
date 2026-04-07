@@ -12,7 +12,7 @@
         ./flameshot.nix
         ./rofi.nix
         ./swayosd.nix
-        ./swww.nix
+        ./awww.nix
         ./waybar.nix
     ];
 
@@ -30,7 +30,7 @@
         hyprpolkit.enable = lib.mkDefault true;
         rofi.enable = lib.mkDefault true;
         swayosd.enable = lib.mkDefault true;
-        swww.enable = lib.mkDefault true;
+        awww.enable = lib.mkDefault true;
         waybar.enable = lib.mkDefault true;
     };
 }
