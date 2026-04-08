@@ -14,7 +14,7 @@
 
 
     config.stylix = lib.mkIf config.stylix.enable {
-        base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-macchiato.yaml";
+        base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark.yaml";
 
         fonts = {
             serif = {
