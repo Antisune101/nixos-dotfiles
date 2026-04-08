@@ -2,7 +2,7 @@
 let 
     randwall = pkgs.writeShellScriptBin "randwall" ''
          #!/bin/sh
-        CURRENT=$(basename "$(swww query | grep -oE '/[^ ]+\.(png|jpg|jpeg|gif|webp)')")
+        CURRENT=$(basename "$(awww query | grep -oE '/[^ ]+\.(png|jpg|jpeg|gif|webp)')")
         WALLS=$(find ${config.hyprland.themedWallpaperDir} -type f | grep -E '\.(png|jpg|jpeg|gif|webp)$')
 
         if [ $(printf "%s\n" "$WALLS" | wc -l) -eq 1 ]; then
@@ -14,7 +14,7 @@ let
             done
         fi
 
-        swww img --transition-type=none "$NEW"
+        awww img --transition-type=none "$NEW"
   '';
 in
 {
