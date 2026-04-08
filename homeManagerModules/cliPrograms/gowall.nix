@@ -7,25 +7,26 @@
 
     config = lib.mkIf config.gowall.enable {
         xdg.configFile."gowall/config.yml" = {
-            text = ''
+            text = let colors = config.lib.stylix.colors; in ''
                 themes:
                   - name: "stylix"
                     colors:
-                      - "#191724"
-                      - "#1f1d2e"
-                      - "#26233a"
-                      - "#6e6a86"
-                      - "#908caa"
-                      - "#e0def4"
-                      - "#e0def4"
-                      - "#524f67"
-                      - "#eb6f92"
-                      - "#f6c177"
-                      - "#ebbcba"
-                      - "#31748f"
-                      - "#9ccfd8"
-                      - "#c4a7e7"
-                      - "#f6c177"
+                      - "#${colors.base00}"
+                      - "#${colors.base01}"
+                      - "#${colors.base02}"
+                      - "#${colors.base03}"
+                      - "#${colors.base04}"
+                      - "#${colors.base05}"
+                      - "#${colors.base06}"
+                      - "#${colors.base07}"
+                      - "#${colors.base08}"
+                      - "#${colors.base09}"
+                      - "#${colors.base0A}"
+                      - "#${colors.base0B}"
+                      - "#${colors.base0C}"
+                      - "#${colors.base0D}"
+                      - "#${colors.base0E}"
+                      - "#${colors.base0F}"
             '';
             onChange = ( if config.hyprland.customScripts.themewall.enable then "themewall" else "" );
         };
