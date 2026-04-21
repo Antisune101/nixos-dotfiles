@@ -23,7 +23,10 @@
             settings = {
                 vim = {
                     lineNumberMode = "relative";
-                    options.shiftwidth = 4;
+                    options = {
+                        shiftwidth = 4;
+                        wrap = false;
+                    };
                     telescope.enable = true;
                     autocomplete.nvim-cmp.enable = true;
                     lsp.enable = true;
