@@ -5,8 +5,8 @@
     docker.enable = true;
   hyprland.enable = true;
     hyprland.monitors = "DP-1, 1920x1080@180, 0x0, auto";
-    jellyfin.enable = true;
-    ddns-updater.enable = true;
+    jellyfin.enable = false; # Activate this for server
+    ddns-updater.enable = false; # Activate this for server
     kanata.devices = [
         "/dev/input/by-path/pci-0000:12:00.3-usb-0:2:1.1-event-kbd"
         "/dev/input/by-path/pci-0000:12:00.3-usbv2-0:2:1.1-event-kbd"
@@ -45,11 +45,11 @@
     networking = {
         hostName = "nixos-pc"; # Define your hostname.
         networkmanager.enable = true;
-        interfaces.wlp15s0.ipv4.addresses = [{
-            address = "192.168.18.10";
-            prefixLength = 24;
-        }];
-        defaultGateway = "192.168.18.1";
+        # interfaces.wlp15s0.ipv4.addresses = [{
+            # address = "192.168.18.10"; For server
+            # prefixLength = 24; For server
+        # }];
+        # defaultGateway = "192.168.18.1"; For server
         nameservers = [ "8.8.8.8" ];
     };
 
