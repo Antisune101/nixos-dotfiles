@@ -40,4 +40,12 @@
     usb.enable = lib.mkDefault true;
     vm.enable = lib.mkDefault true;
     zsh.enable = lib.mkDefault true;
+
+     nixpkgs.overlays = [ 
+        (final: prev: {
+            openldap = prev.openldap.overrideAttrs (_: {
+                doCheck = false;
+            });
+        })
+    ];
 }
