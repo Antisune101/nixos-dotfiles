@@ -19,6 +19,8 @@ in {
           inputs.self.outputs.homeManagerModules.default
         ];
 
+        gtk.gtk4.theme = null;
+
         home.username = userSettings.username;
         home.homeDirectory = "/home/${userSettings.username}";
         home.stateVersion = "25.05";
